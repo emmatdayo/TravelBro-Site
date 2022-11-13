@@ -11,6 +11,7 @@ const Signup = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState('')
   const [file, setFile] = useState('')
+  const [cookies, setCookie] = useCookies(['user'])
 
   const baseURL = 'http://localhost/Travelbro/UploadApi.php'
   useEffect(() => {}, [])

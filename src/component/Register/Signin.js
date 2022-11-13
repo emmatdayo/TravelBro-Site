@@ -1,9 +1,7 @@
 import './Register.scss'
 import logo from '../../images/travelbro-blue-nav.png'
-//import { TiSocialFacebook } from 'react-icons/ti'
-import { BsArrowRightShort, BsFacebook } from 'react-icons/bs'
+import { BsArrowRightShort } from 'react-icons/bs'
 import { useState } from 'react'
-import FacebookLogin from 'react-facebook-login'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
 
@@ -11,14 +9,6 @@ const Signup = () => {
   const [inputs, setInputs] = useState({})
   const [post, setPost] = useState({})
   const [cookies, setCookie] = useCookies(['user'])
-
-  const [fbinfo, setFbinfo] = useState({
-    isLoggedIn: false,
-    userID: '',
-    name: '',
-    email: '',
-    picture: '',
-  })
 
   const baseURL = 'http://localhost/Travelbro/api.php'
 
@@ -68,49 +58,10 @@ const Signup = () => {
     }
   }
 
-  const responseFacebook = (response) => {
-    //console.log(response)
-
-    setFbinfo({
-      isLoggedIn: true,
-      userID: response.userID,
-      name: response.name,
-      email: response.email,
-      picture: response.picture.data.url,
-    })
-  }
-
   const componentClicked = () => {
     console.log('clicked')
   }
-  let fbcontent
 
-  if (fbinfo.isLoggedIn) {
-    fbcontent = (
-      <div
-        style={{
-          width: '400px',
-          margin: 'auto',
-          background: '#f4f4f4',
-          padding: '20px',
-        }}
-      >
-        <img src={fbinfo.picture} alt={fbinfo.name} />
-        <h2>Welcome {fbinfo.name}</h2>
-        Email: {fbinfo.email}
-      </div>
-    )
-  } else {
-    fbcontent = (
-      <FacebookLogin
-        appId="1480647395772893"
-        autoLoad={true}
-        fields="name,email,picture"
-        onClick={componentClicked}
-        callback={responseFacebook}
-      />
-    )
-  }
   return (
     <div className="my-container">
       <div className="row">
@@ -154,9 +105,6 @@ const Signup = () => {
                   <input type="submit" className="btn button " value="Submit" />
                 </div>
               </form>
-              <button className="btn button2">
-                Continue with Facebook <BsFacebook size={20} color="white" />
-              </button>
 
               <div className="signin-link center">
                 Already a member{' '}

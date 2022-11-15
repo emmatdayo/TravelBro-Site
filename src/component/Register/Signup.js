@@ -1,7 +1,6 @@
 import './Register.scss'
 import logo from '../../images/travelbro-blue-nav.png'
 //import { TiSocialFacebook } from 'react-icons/ti'
-import { BsArrowRightShort, BsFacebook } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
@@ -51,6 +50,7 @@ const Signup = () => {
     axios.post(baseURL, formData).then((response1) => {
       console.log(response1.data)
       const status = response1.data.status
+      setPost(status)
       console.log(status)
 
       if (status == 'signed_up') {

@@ -28,9 +28,6 @@
     "sass": "^1.54.3",
     "web-vitals": "^2.1.4"
   },
-  "devDependencies": {
-    "react-scripts": "^5.0.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -56,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "react-scripts": "^5.0.1",
     "prettier": "2.7.1"
   }
 }

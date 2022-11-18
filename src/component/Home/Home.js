@@ -213,7 +213,7 @@ const Home = () => {
                 >
                   Lagos <BsArrowRightShort size={25} /> Abuja
                 </div>
-                <div className="pointer col-2 ">&gt</div>
+                <div className="pointer col-2 ">&gt;</div>
               </div>
             </div>
             <div className="col-sm-4 mb-2 ">
@@ -225,7 +225,7 @@ const Home = () => {
                 >
                   Lagos <BsArrowRightShort size={25} /> Ibadon
                 </div>
-                <div className="pointer col-2">&gt</div>
+                <div className="pointer col-2">&gt;</div>
               </div>
             </div>
             <div className="col-sm-4 mb-2 ">
@@ -237,7 +237,7 @@ const Home = () => {
                 >
                   Lagos <BsArrowRightShort size={25} /> Abeokuta
                 </div>
-                <div className="pointer col-2 ">&gt</div>
+                <div className="pointer col-2 ">&gt;</div>
               </div>
             </div>
           </div>

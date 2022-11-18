@@ -6,7 +6,6 @@ import about from '../../images/about.png'
 import { GiTwoCoins } from 'react-icons/gi'
 import { BsFillLightningChargeFill } from 'react-icons/bs'
 import { BsPersonCheckFill, BsArrowRightShort } from 'react-icons/bs'
-import ScrollAnimation from 'react-animate-on-scroll'
 import { useState } from 'react'
 import Footer from '../Footer/Footer'
 import Mynavbar from '../Mynavbar/Mynavbar'
@@ -56,7 +55,6 @@ const Home = () => {
       }
       setCookie('input', location, { path: '/' })
     }
-    //console.log(inputs)
 
     console.log(cookies.input)
     setCookie('page_to_load', 'Passenger', { path: '/' })
@@ -167,46 +165,38 @@ const Home = () => {
         <div className="info-section">
           <div className="row container center">
             <div className="col-sm-4">
-              <ScrollAnimation animateIn="fadeInLeft">
-                <div className="info-icon">
-                  <GiTwoCoins size={60} color="#c5d3fd" />
-                </div>
-                <div className="info-title">
-                  Your pick of rides at low prices
-                </div>
-                <div className="info-text">
-                  No matter where you’re going, by bus or carpool, find the
-                  perfect ride from our wide range of destinations and routes at
-                  low prices.
-                </div>
-              </ScrollAnimation>
+              <div className="info-icon">
+                <GiTwoCoins size={60} color="#c5d3fd" />
+              </div>
+              <div className="info-title">Your pick of rides at low prices</div>
+              <div className="info-text">
+                No matter where you’re going, by bus or carpool, find the
+                perfect ride from our wide range of destinations and routes at
+                low prices.
+              </div>
             </div>
             <div className="col-sm-4 ">
-              <ScrollAnimation animateIn="fadeInUp">
-                <div className="info-icon">
-                  <BsPersonCheckFill size={50} color="#c5d3fd" />
-                </div>
-                <div className="info-title">Trust who you travel with</div>
-                <div className="info-text">
-                  We take the time to get to know each of our members and bus
-                  partners. We check reviews, profiles and IDs, so you know who
-                  you’re travelling with and can book your ride at ease on our
-                  secure platform.
-                </div>
-              </ScrollAnimation>
+              <div className="info-icon">
+                <BsPersonCheckFill size={50} color="#c5d3fd" />
+              </div>
+              <div className="info-title">Trust who you travel with</div>
+              <div className="info-text">
+                We take the time to get to know each of our members and bus
+                partners. We check reviews, profiles and IDs, so you know who
+                you’re travelling with and can book your ride at ease on our
+                secure platform.
+              </div>
             </div>
             <div className="col-sm-4">
-              <ScrollAnimation animateIn="fadeInRight">
-                <div className="info-icon">
-                  <BsFillLightningChargeFill size={45} color="#c5d3fd" />
-                </div>
-                <div className="info-title">Scroll, click, tap and go!</div>
-                <div className="info-text ">
-                  Booking a ride has never been easier! Thanks to our simple app
-                  powered by great technology, you can book a ride close to you
-                  in just minutes.
-                </div>
-              </ScrollAnimation>
+              <div className="info-icon">
+                <BsFillLightningChargeFill size={45} color="#c5d3fd" />
+              </div>
+              <div className="info-title">Scroll, click, tap and go!</div>
+              <div className="info-text ">
+                Booking a ride has never been easier! Thanks to our simple app
+                powered by great technology, you can book a ride close to you in
+                just minutes.
+              </div>
             </div>
           </div>
         </div>
@@ -262,24 +252,22 @@ const Home = () => {
             </div>
             <div className="col-sm-6 text-container">
               <div className="publish-textarea center">
-                <ScrollAnimation animateIn="fadeInRight">
-                  <div className="publish-title mb-2">
-                    Where do you want to drive to?
-                  </div>
-                  <div className="publish-text mb-3">
-                    Let's make this your least expensive journey ever.
-                  </div>
-                  <button
-                    className="button btn btn-lg btn-primary"
-                    onClick={() => {
-                      setCookie('page_to_load', 'Driver', { path: '/' })
+                <div className="publish-title mb-2">
+                  Where do you want to drive to?
+                </div>
+                <div className="publish-text mb-3">
+                  Let's make this your least expensive journey ever.
+                </div>
+                <button
+                  className="button btn btn-lg btn-primary"
+                  onClick={() => {
+                    setCookie('page_to_load', 'Driver', { path: '/' })
 
-                      window.location.href = '/dashboard'
-                    }}
-                  >
-                    Publish a ride
-                  </button>
-                </ScrollAnimation>
+                    window.location.href = '/dashboard'
+                  }}
+                >
+                  Publish a ride
+                </button>
               </div>
             </div>
           </div>
@@ -288,24 +276,22 @@ const Home = () => {
         <div className="about-section">
           <div className="row container pb-3 center">
             <div className="col-sm-6 text-container">
-              <ScrollAnimation animateIn="fadeInLeft">
-                <div className="about-textarea center">
-                  <div className="about-title mb-2">Learn more about us</div>
-                  <div className="about-text mb-3">
-                    At Travelbro, our objective is to make the Whole experience
-                    easier, fun and secure. Let's take you through how it works
-                    and prevent you from scams
-                  </div>
-                  <button
-                    className="button btn btn-lg btn-primary"
-                    onClick={() => {
-                      window.location.href = '/about'
-                    }}
-                  >
-                    Learn more
-                  </button>
+              <div className="about-textarea center">
+                <div className="about-title mb-2">Learn more about us</div>
+                <div className="about-text mb-3">
+                  At Travelbro, our objective is to make the Whole experience
+                  easier, fun and secure. Let's take you through how it works
+                  and prevent you from scams
                 </div>
-              </ScrollAnimation>
+                <button
+                  className="button btn btn-lg btn-primary"
+                  onClick={() => {
+                    window.location.href = '/about'
+                  }}
+                >
+                  Learn more
+                </button>
+              </div>
             </div>
 
             <div className="col-sm-6 img-container">

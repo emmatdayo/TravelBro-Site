@@ -1,14 +1,15 @@
 .my-banner {
   // display: block;
-  width: 100%;
+  min-width: 100.6%;
   //height: 490px;
   //border: 2px solid rgb(239, 65, 65);
-  background-color: #c5d3fd;
-  background: linear-gradient(to top, #dae3fe, #ffffff);
+  //background-color: #c5d3fd;
+  padding: 100px 0;
+  background: linear-gradient(to top, #aabeff, #dae3fe, #ffffff);
   display: flex;
   align-items: center;
   .image {
-    width: 95%;
+    width: 65%;
     padding-bottom: 30px;
     //height: 100%;
     //display: block;
@@ -31,7 +32,7 @@
       margin-left: auto;
       margin-right: auto;
       text-align: left;
-      color: #2d30c2;
+      //color: #2d30c2;
 
       .image1 {
         width: 65%;
@@ -40,8 +41,8 @@
       }
 
       .sub-title {
-        font-size: 36px;
-        font-weight: 700;
+        font-size: 34px;
+        font-weight: 800;
         //font-style: italic;
         //width: 80%;
         //margin-left: 10px;

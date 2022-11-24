@@ -5,9 +5,10 @@ import { usePaystackPayment } from 'react-paystack'
 
 const config = {
   reference: new Date().getTime().toString(),
-  email: 'user@example.com',
+  email: 'adedayooke29@gmail.com',
   amount: 20000,
-  publicKey: 'pk_test_dsdfghuytfd2345678gvxxxxxxxxxx',
+  publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
+  //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
 }
 
 // you can call this function anything

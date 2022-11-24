@@ -47,6 +47,10 @@ const Dashboard = () => {
     if (user == '' || user == undefined) {
       window.location.href = '/signin'
     }
+    const UserData = cookies.UserInfo
+    if (UserData !== undefined || UserData !== '') {
+      setPost(UserData)
+    }
   }, [cookies])
   const CompleteSign = () => {
     if (CurrentPage.PageLoad == Driver && cookies.status == 'Passenger') {
@@ -83,12 +87,12 @@ const Dashboard = () => {
           <div className="profile-pic-div center">
             <div className="profile-icon profile-pic icon">
               <img
-                src={imageURL + cookies.UserInfo.profile_picture}
+                src={post.profile_picture}
                 alt={<CgProfile size={90} />}
                 className="profile-pic"
               />
             </div>
-            <div className="">{cookies.UserInfo.name}</div>
+            <div className="">{post.name}</div>
           </div>
           <div className="menu-div">
             <div className="passenger-div" id="Passenger" onClick={pageLoader}>

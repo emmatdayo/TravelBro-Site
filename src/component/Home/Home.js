@@ -1,5 +1,5 @@
 import './Home.scss'
-import bannerimage from '../../images/road3.png'
+import bannerimage from '../../images/about1.png'
 import publish from '../../images/car-road.jpg'
 import title from '../../images/travelbro-blue-title.png'
 import about from '../../images/about.png'
@@ -74,18 +74,18 @@ const Home = () => {
     <>
       <Mynavbar />
       <div className="my-container ">
-        <div className="row my-banner  pt-2 pb-5 ">
-          <div className="col-sm-5 p-2">
+        <div style={{}} className="row my-banner container-fluid  ">
+          <div className="col-sm-6 p-2">
             <div className="form-container">
               <div className="banner-title mb-5">
-                <div className="title-image">
+                {/* <div className="title-image">
                   <img src={title} className="image1" alt="Travelbro" />
-                </div>
+                </div>*/}
 
                 <div className="sub-title ">
                   Let's help you get to where you want to go at a low price
                 </div>
-                <button
+                {/*<button
                   className="banner-button btn btn-primary mt-3"
                   onClick={() => {
                     window.location.href = '/dashboard'
@@ -93,11 +93,11 @@ const Home = () => {
                   }}
                 >
                   Publish a Ride
-                </button>
+                </button>*/}
               </div>
             </div>
           </div>
-          <div className="col-sm-7">
+          <div className="col-sm-6 pb-5">
             <img src={bannerimage} className="image" />
           </div>
         </div>

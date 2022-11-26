@@ -85,15 +85,15 @@ const Home = () => {
                 <div className="sub-title ">
                   Let's help you get to where you want to go at a low price
                 </div>
-                {/*<button
+                <button
                   className="banner-button btn btn-primary mt-3"
                   onClick={() => {
                     window.location.href = '/dashboard'
                     setCookie('page_to_load', 'Driver', { path: '/' })
                   }}
                 >
-                  Publish a Ride
-                </button>*/}
+                  Host a Trip
+                </button>
               </div>
             </div>
           </div>

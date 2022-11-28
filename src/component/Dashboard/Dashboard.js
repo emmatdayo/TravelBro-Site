@@ -9,6 +9,7 @@ import Driver from './driver/driver'
 import Signin from './../Register/Signin'
 import { useCookies } from 'react-cookie'
 import CompleteSignup from './driver/Modal'
+import Mynavbar from '../Mynavbar/Mynavbar'
 
 const baseURL = 'https://www.travelbro.top/api.php'
 const imageURL = 'http://www.travelbro.top/'
@@ -116,6 +117,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="display-container ">
+          <Mynavbar />
           <CompleteSign />
           <Present />
         </div>

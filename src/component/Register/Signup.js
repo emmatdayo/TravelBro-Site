@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
+import Mynavbar from '../Mynavbar/Mynavbar'
 
 const Signup = () => {
   const [inputs, setInputs] = useState('')
@@ -71,83 +72,89 @@ const Signup = () => {
   }
 
   return (
-    <div className="my-container">
-      {post}
-      <div className="row">
-        <div className="col-sm"></div>
-        <div className="col-sm-5 center s-container">
-          <div className="signup-container center ">
-            <div className="logo-container center ">
-              <img src={logo} alt="Travelbro" className="logo-img" />
-            </div>
+    <>
+      <Mynavbar />
+      <div className="my-container">
+        {post}
+        <div className="row">
+          <div className="col-sm"></div>
+          <div className="col-sm-5 center s-container">
+            <div className="signup-container center ">
+              <div className="logo-container center ">
+                <img src={logo} alt="Travelbro" className="logo-img" />
+              </div>
 
-            <div className="header-container">
-              <h1 className="signup-title">Sign up with us</h1>
-            </div>
-            <form onSubmit={submit_handler}>
-              <div className="body-container center">
-                <div className="form-input center">
-                  <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Upload a display picture</Form.Label>
-                    <Form.Control
-                      type="file"
-                      value={file.image}
-                      onChange={file_handler}
-                      accept="image/png, image/gif, image/jpeg, image/jpg"
-                    />
-                  </Form.Group>
-                </div>
-                <div className="row half-div center">
-                  <div className="form-group col-6 pp-input-div center mb-4">
+              <div className="header-container">
+                <h1 className="signup-title">Sign up with us</h1>
+              </div>
+              <form onSubmit={submit_handler}>
+                <div className="body-container center">
+                  <div className="form-input center">
+                    <Form.Group controlId="formFile" className="mb-3">
+                      <Form.Label>Upload a display picture</Form.Label>
+                      <Form.Control
+                        type="file"
+                        value={file.image}
+                        onChange={file_handler}
+                        accept="image/png, image/gif, image/jpeg, image/jpg"
+                      />
+                    </Form.Group>
+                  </div>
+                  <div className="row half-div center">
+                    <div className="form-group col-6 pp-input-div center mb-4">
+                      <input
+                        type="email"
+                        className=" email-input input"
+                        name="email"
+                        placeholder=" Enter email"
+                        value={inputs.email}
+                        onChange={change_handler}
+                        required
+                      />
+                    </div>
+                    <div className="form-group col-6 tel-input-div center mb-4">
+                      <input
+                        type="number"
+                        className=" email-input input"
+                        name="tel"
+                        placeholder=" Tel"
+                        value={inputs.tel}
+                        onChange={change_handler}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group name-input-div center mb-4">
                     <input
-                      type="email"
+                      type="text"
                       className=" email-input input"
-                      name="email"
-                      placeholder=" Enter email"
-                      value={inputs.email}
+                      name="name"
+                      placeholder=" Full Name"
+                      value={inputs.name}
                       onChange={change_handler}
                       required
                     />
                   </div>
-                  <div className="form-group col-6 tel-input-div center mb-4">
+
+                  <div className="form-group password-input-div center mb-4">
                     <input
-                      type="number"
-                      className=" email-input input"
-                      name="tel"
-                      placeholder=" Tel"
-                      value={inputs.tel}
+                      type="password"
+                      className=" password-input input"
+                      name="password"
+                      placeholder=" Password"
+                      value={inputs.password}
                       onChange={change_handler}
                       required
                     />
                   </div>
-                </div>
-                <div className="form-group name-input-div center mb-4">
-                  <input
-                    type="text"
-                    className=" email-input input"
-                    name="name"
-                    placeholder=" Full Name"
-                    value={inputs.name}
-                    onChange={change_handler}
-                    required
-                  />
-                </div>
-
-                <div className="form-group password-input-div center mb-4">
-                  <input
-                    type="password"
-                    className=" password-input input"
-                    name="password"
-                    placeholder=" Password"
-                    value={inputs.password}
-                    onChange={change_handler}
-                    required
-                  />
-                </div>
-                <div className="button-div center mb-4">
-                  <input type="submit" className="btn button " value="Submit" />
-                </div>
-                {/*<div className="fb-div center">
+                  <div className="button-div center mb-4">
+                    <input
+                      type="submit"
+                      className="btn button "
+                      value="Submit"
+                    />
+                  </div>
+                  {/*<div className="fb-div center">
                   <div className="fb-text">Continue with Facebook</div>
                   <div className="fb-arrow">
                     <BsFacebook size={30} color="#5153e4" />
@@ -155,17 +162,18 @@ const Signup = () => {
                   </div>
                 </div> 
   */}
-                <div className="signin-link center">
-                  Already a member{' '}
-                  <span className="link text-primary">Sign in</span>
+                  <div className="signin-link center">
+                    Already a member{' '}
+                    <span className="link text-primary">Sign in</span>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
+          <div className="col-sm"></div>
         </div>
-        <div className="col-sm"></div>
       </div>
-    </div>
+    </>
   )
 }
 

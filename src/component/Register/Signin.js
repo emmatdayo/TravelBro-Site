@@ -4,6 +4,7 @@ import { BsArrowRightShort } from 'react-icons/bs'
 import { useState } from 'react'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
+import Mynavbar from '../Mynavbar/Mynavbar'
 
 const Signup = () => {
   const [inputs, setInputs] = useState({})
@@ -63,59 +64,66 @@ const Signup = () => {
   }
 
   return (
-    <div className="my-container">
-      <div className="row">
-        <div className="col-sm-3"></div>
-        <div className="col-sm-6 s-container">
-          <div className="signin-container  ">
-            <div className="logo-container center ">
-              <img src={logo} alt="Travelbro" className="logo-img" />
-            </div>
+    <>
+      <Mynavbar />
+      <div className="my-container">
+        <div className="row">
+          <div className="col-sm-3"></div>
+          <div className="col-sm-6 s-container">
+            <div className="signin-container  ">
+              <div className="logo-container center ">
+                <img src={logo} alt="Travelbro" className="logo-img" />
+              </div>
 
-            <div className="header-container">
-              <h1 className="signup-title">Sign into Travelbro</h1>
-            </div>
+              <div className="header-container">
+                <h1 className="signup-title">Sign into Travelbro</h1>
+              </div>
 
-            <div className="form-container ">
-              <form onSubmit={submit_handler}>
-                <div className="form-group email-input-div center mb-4">
-                  <input
-                    type="email"
-                    className=" email-input"
-                    name="email"
-                    aria-describedby="emailHelp"
-                    placeholder=" Enter email"
-                    value={inputs.email}
-                    onChange={change_handler}
-                    required
-                  />
-                </div>
-                <div class="form-group pass-input-div center mb-5">
-                  <input
-                    type="password"
-                    className=" pass-input"
-                    name="password"
-                    placeholder=" Password"
-                    value={inputs.password}
-                    onChange={change_handler}
-                    required
-                  />
-                </div>
-                <div className="button-div center mb-4">
-                  <input type="submit" className="btn button " value="Submit" />
-                </div>
-              </form>
+              <div className="form-container ">
+                <form onSubmit={submit_handler}>
+                  <div className="form-group email-input-div center mb-4">
+                    <input
+                      type="email"
+                      className=" email-input"
+                      name="email"
+                      aria-describedby="emailHelp"
+                      placeholder=" Enter email"
+                      value={inputs.email}
+                      onChange={change_handler}
+                      required
+                    />
+                  </div>
+                  <div class="form-group pass-input-div center mb-5">
+                    <input
+                      type="password"
+                      className=" pass-input"
+                      name="password"
+                      placeholder=" Password"
+                      value={inputs.password}
+                      onChange={change_handler}
+                      required
+                    />
+                  </div>
+                  <div className="button-div center mb-4">
+                    <input
+                      type="submit"
+                      className="btn button "
+                      value="Submit"
+                    />
+                  </div>
+                </form>
 
-              <div className="signin-link center">
-                Already a member{' '}
-                <span className="link text-primary">Sign in</span>
+                <div className="signin-link center">
+                  Already a member{' '}
+                  <span className="link text-primary">Sign in</span>
+                </div>
               </div>
             </div>
           </div>
+          <div className="col-sm-3"></div>
         </div>
-        <div className="col-sm-3"></div>
       </div>
-    </div>
+    </>
   )
 }
 

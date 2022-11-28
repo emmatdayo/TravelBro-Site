@@ -203,8 +203,8 @@ const SearchTrips = () => {
 
               <tr className="middle-row">
                 <td>
-                  <div className="">{data1.driver_name}</div>
-                  <div className="">{data1.driver_tel}</div>
+                  <div className="">{data1.name}</div>
+                  <div className="">{data1.tel}</div>
                 </td>
                 <td className="arrow-icon ">
                   <HiOutlineArrowNarrowDown size={45} />

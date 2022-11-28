@@ -15,8 +15,8 @@ const DriverTrips = () => {
   const [ViewPassenger, setViewPassenger] = useState(false)
   const [cookies, setCookie] = useCookies(['user'])
 
-  const imageURL = 'http://localhost/Travelbro/'
-  const baseURL = 'http://localhost/Travelbro/api.php'
+  const imageURL = 'http://www.travelbro.top/'
+  const baseURL = 'https://www.travelbro.top/api.php'
   useEffect(() => {
     ViewStuff()
   }, [cancelTrip])

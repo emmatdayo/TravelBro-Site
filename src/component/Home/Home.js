@@ -1,5 +1,5 @@
 import './Home.scss'
-import bannerimage from '../../images/about1.png'
+import bannerimage from '../../images/road3.png'
 import publish from '../../images/car-road.jpg'
 import title from '../../images/travelbro-blue-title.png'
 import about from '../../images/about.png'
@@ -75,7 +75,7 @@ const Home = () => {
       <Mynavbar />
       <div className="my-container ">
         <div style={{}} className="row my-banner container-fluid  ">
-          <div className="col-sm-6 p-2">
+          <div className="col-sm-5 p-2">
             <div className="form-container">
               <div className="banner-title mb-5">
                 {/* <div className="title-image">
@@ -86,7 +86,7 @@ const Home = () => {
                   Let's help you get to where you want to go at a low price
                 </div>
                 <button
-                  className="banner-button btn btn-primary mt-3"
+                  className="banner-button btn btn-dark mt-3"
                   onClick={() => {
                     window.location.href = '/dashboard'
                     setCookie('page_to_load', 'Driver', { path: '/' })
@@ -97,7 +97,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-6 pb-5">
+          <div className="col-sm-7 pb-5">
             <img src={bannerimage} className="image" />
           </div>
         </div>

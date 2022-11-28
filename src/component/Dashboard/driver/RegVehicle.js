@@ -9,7 +9,7 @@ const RegVehicle = () => {
   const [file, setFile] = useState('')
   const [cookies, setCookie] = useCookies(['user', 'status'])
 
-  const baseURL = 'http://localhost/Travelbro/UploadApi.php'
+  const baseURL = 'https://www.travelbro.top/UploadApi.php'
 
   const change_handler = (e) => {
     const name = e.target.name

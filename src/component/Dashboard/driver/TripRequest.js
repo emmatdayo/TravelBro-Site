@@ -12,7 +12,7 @@ const cookies = new Cookies()
 const TripRequest = () => {
   const [post, setPost] = useState([])
 
-  const baseURL = 'http://localhost/Travelbro/api.php'
+  const baseURL = 'https://www.travelbro.top/api.php'
   useEffect(() => {
     ViewStuff()
   })

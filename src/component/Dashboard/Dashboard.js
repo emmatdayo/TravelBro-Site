@@ -10,8 +10,8 @@ import Signin from './../Register/Signin'
 import { useCookies } from 'react-cookie'
 import CompleteSignup from './driver/Modal'
 
-const baseURL = 'http://localhost/Travelbro/api.php'
-const imageURL = 'http://localhost/Travelbro/'
+const baseURL = 'https://www.travelbro.top/api.php'
+const imageURL = 'http://www.travelbro.top/'
 
 const Dashboard = () => {
   const [post, setPost] = useState('')

@@ -10,7 +10,7 @@ const CompleteSignup = () => {
   const [post, setPost] = useState('')
   const [cookies, setCookie] = useCookies(['user', 'status'])
 
-  const baseURL = 'http://localhost/Travelbro/api.php'
+  const baseURL = 'https://www.travelbro.top/api.php'
 
   const change_handler = (e) => {
     const name = e.target.name

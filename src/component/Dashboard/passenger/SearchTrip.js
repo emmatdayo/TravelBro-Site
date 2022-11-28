@@ -19,8 +19,8 @@ const SearchTrips = () => {
     'page_to_load',
     'input',
   ])
-  const imageURL = 'http://localhost/Travelbro/'
-  const baseURL = 'http://localhost/Travelbro/api.php'
+  const imageURL = 'http://www.travelbro.top/'
+  const baseURL = 'https://www.travelbro.top/api.php'
   useEffect(() => {
     if (cookies.input) {
       const user = cookies.user

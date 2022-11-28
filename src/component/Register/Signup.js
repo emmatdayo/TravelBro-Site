@@ -12,7 +12,7 @@ const Signup = () => {
   const [file, setFile] = useState('')
   const [cookies, setCookie] = useCookies(['user'])
 
-  const baseURL = 'http://localhost/Travelbro/UploadApi.php'
+  const baseURL = 'https://www.travelbro.top/UploadApi.php'
   useEffect(() => {}, [])
 
   const change_handler = (e) => {

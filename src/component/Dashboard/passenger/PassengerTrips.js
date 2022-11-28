@@ -12,7 +12,7 @@ const PassengerTrip = () => {
   const [post, setPost] = useState([])
   const [deleteTrip, setDeleteTrip] = useState(0)
 
-  const baseURL = 'http://localhost/Travelbro/api.php'
+  const baseURL = 'https://www.travelbro.top/api.php'
   useEffect(() => {
     ViewStuff()
   }, [deleteTrip])

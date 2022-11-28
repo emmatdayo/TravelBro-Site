@@ -7,7 +7,6 @@ import CreateTrip from './CreateTrip'
 import TripRequest from './TripRequest'
 import RegVehicle from './RegVehicle'
 import { useCookies } from 'react-cookie'
-import Mynavbar from '../../Mynavbar/Mynavbar'
 
 const Driver = () => {
   const [selected, setSelected] = useState(false)
@@ -55,78 +54,71 @@ const Driver = () => {
     PresentSection(CurrentSection.SectionLoad)
   }
   return (
-    <>
-      <Mynavbar />
-      <div className="my-container2">
-        <div className="image-div2 mt-5">
-          <img
-            className="driver-image"
-            src={DriverImage}
-            alt="passenger image"
-          />
-        </div>
-        <div className="nav-div">
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <button
-                class={
-                  CurrentSection.SectionLoad == RegVehicle
-                    ? 'nav-link active'
-                    : 'nav-link'
-                }
-                id="RegVehicle"
-                onClick={SectionLoader}
-              >
-                Register Vehicle
-              </button>
-            </li>
-            <li class="nav-item">
-              <button
-                class={
-                  CurrentSection.SectionLoad == CreateTrip
-                    ? 'nav-link active'
-                    : 'nav-link'
-                }
-                id="CreateTrip"
-                onClick={SectionLoader}
-              >
-                Create Trip
-              </button>
-            </li>
-            <li class="nav-item">
-              <button
-                class={
-                  CurrentSection.SectionLoad == DriverTrips
-                    ? 'nav-link active'
-                    : 'nav-link'
-                }
-                id="DriverTrips"
-                onClick={SectionLoader}
-              >
-                My Trips
-              </button>
-            </li>
-            <li class="nav-item">
-              <button
-                class={
-                  CurrentSection.SectionLoad == TripRequest
-                    ? 'nav-link active'
-                    : 'nav-link'
-                }
-                id="TripRequest"
-                onClick={SectionLoader}
-              >
-                Trip Request
-              </button>
-            </li>
-          </ul>
-        </div>
-
-        <div className="passenger-display">
-          <PresentSection />
-        </div>
+    <div className="my-container2">
+      <div className="image-div2 mt-5">
+        <img className="driver-image" src={DriverImage} alt="passenger image" />
       </div>
-    </>
+      <div className="nav-div">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button
+              class={
+                CurrentSection.SectionLoad == RegVehicle
+                  ? 'nav-link active'
+                  : 'nav-link'
+              }
+              id="RegVehicle"
+              onClick={SectionLoader}
+            >
+              Register Vehicle
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class={
+                CurrentSection.SectionLoad == CreateTrip
+                  ? 'nav-link active'
+                  : 'nav-link'
+              }
+              id="CreateTrip"
+              onClick={SectionLoader}
+            >
+              Create Trip
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class={
+                CurrentSection.SectionLoad == DriverTrips
+                  ? 'nav-link active'
+                  : 'nav-link'
+              }
+              id="DriverTrips"
+              onClick={SectionLoader}
+            >
+              My Trips
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class={
+                CurrentSection.SectionLoad == TripRequest
+                  ? 'nav-link active'
+                  : 'nav-link'
+              }
+              id="TripRequest"
+              onClick={SectionLoader}
+            >
+              Trip Request
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div className="passenger-display">
+        <PresentSection />
+      </div>
+    </div>
   )
 }
 

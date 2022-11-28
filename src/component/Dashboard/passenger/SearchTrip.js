@@ -203,7 +203,7 @@ const SearchTrips = () => {
 
               <tr className="middle-row">
                 <td>
-                  <div className="d-info">{data1.name}</div>
+                  <div className="d-info d-name">{data1.name}</div>
                   <div className="d-info">{data1.tel}</div>
                 </td>
                 <td className="arrow-icon ">

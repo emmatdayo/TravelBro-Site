@@ -77,7 +77,7 @@ const SearchTrips = () => {
       // if (!.length) return <div>No data</div>;
     })
   }
-  let price = post.trip_price + '00'
+  let price = post.trip_price * 100
   const config = {
     reference: new Date().getTime().toString(),
     email: cookies.user,
@@ -91,7 +91,7 @@ const SearchTrips = () => {
     // Implementation for whatever you want to do with reference and after success call.
     const id = e.target.id
     const user = cookies.user
-    //alert(user)
+    alert(user)
     const datas = {
       request: 'join_trip',
       data: id,
@@ -105,6 +105,7 @@ const SearchTrips = () => {
       alert(Join_trip)
     })
     console.log(reference)
+    alert(reference)
   }
 
   // you can call this function anything

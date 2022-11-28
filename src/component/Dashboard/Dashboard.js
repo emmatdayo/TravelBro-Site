@@ -87,7 +87,7 @@ const Dashboard = () => {
           <div className="profile-pic-div center">
             <div className="profile-icon profile-pic icon">
               <img
-                src={post.profile_picture}
+                src={imageURL + post.profile_picture}
                 alt={<CgProfile size={90} />}
                 className="profile-pic"
               />

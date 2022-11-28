@@ -48,6 +48,8 @@ const Signup = () => {
         setCookie('UserInfo', UserInfo, { path: '/' })
 
         //alert(cookies.user)
+      } else if (status == 'admin_logged_in') {
+        window.location.href = '/admin'
       } else {
         // alert('not yet')
       }

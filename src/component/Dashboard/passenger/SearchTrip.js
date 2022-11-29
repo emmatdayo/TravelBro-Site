@@ -85,7 +85,7 @@ const SearchTrips = () => {
     publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
     //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
   }
-
+  console.log(post.trip_price)
   // you can call this function anything
   const onSuccess = (reference, e) => {
     // Implementation for whatever you want to do with reference and after success call.

@@ -40,7 +40,8 @@ const SearchTrips = () => {
         console.log(search_data)
         setPost(search_data)
         //alert(post)
-        console.log(post)
+        let posts = post
+        console.log(posts)
       })
     }
   }, [])

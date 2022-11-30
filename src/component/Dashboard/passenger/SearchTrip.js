@@ -72,6 +72,7 @@ const SearchTrips = () => {
       //alert(post)
       console.log(post)
       console.log(post.trip_price)
+      console.log(post[0].trip_price)
       setCookie('input', inputs, { path: '/' })
 
       //const json_data = JSON.parse(post)

@@ -30,6 +30,7 @@ const Signup = () => {
     //console.log(file)
     //const filed = e.target['image'].files[0]
     console.log(inputs)
+    console.log(file.name)
     const formData = new FormData()
     const datas = {
       request: 'signup',
@@ -47,7 +48,7 @@ const Signup = () => {
     for (var pair of formData.entries()) {
       console.log(pair[0] + ', ' + pair[1])
     }
-
+    const UserDp = 'uploads/' + file.name
     axios.post(baseURL, formData).then((response1) => {
       console.log(response1.data)
       const status = response1.data.status
@@ -55,11 +56,12 @@ const Signup = () => {
       console.log(status)
 
       if (status == 'signed_up') {
-        window.location.href = '/dashboard'
+        //window.location.href = '/dashboard'
         setCookie('user', inputs.email, { path: '/' })
         setCookie('page_to_load', 'Passenger', { path: '/' })
         setCookie('status', 'Passenger', { path: '/' })
         setCookie('UserInfo', inputs, { path: '/' })
+        setCookie('UserDp', UserDp, { path: '/' })
       } else {
         // alert('not yet')
       }
@@ -164,7 +166,14 @@ const Signup = () => {
   */}
                   <div className="signin-link center">
                     Already a member{' '}
-                    <span className="link text-primary">Sign in</span>
+                    <span
+                      className="link text-primary"
+                      onClick={() => {
+                        window.location.href = '/signin'
+                      }}
+                    >
+                      Sign in
+                    </span>
                   </div>
                 </div>
               </form>

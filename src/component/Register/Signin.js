@@ -39,6 +39,7 @@ const Signup = () => {
       if (status == 'logged_in') {
         const type = response.data.user_info[0].user_status
         const UserInfo = response.data.user_info[0]
+        const UserDp = UserInfo.profile_picture
         console.log(type)
         console.log(UserInfo)
         window.location.href = '/dashboard'
@@ -46,7 +47,7 @@ const Signup = () => {
         setCookie('page_to_load', type, { path: '/' })
         setCookie('status', type, { path: '/' })
         setCookie('UserInfo', UserInfo, { path: '/' })
-
+        setCookie('UserDp', UserDp, { path: '/' })
         //alert(cookies.user)
       } else if (status == 'admin_logged_in') {
         window.location.href = '/admin'
@@ -117,7 +118,14 @@ const Signup = () => {
 
                 <div className="signin-link center">
                   Already a member{' '}
-                  <span className="link text-primary">Sign in</span>
+                  <span
+                    className="link text-primary"
+                    onClick={() => {
+                      window.location.href = '/signup'
+                    }}
+                  >
+                    Sign up
+                  </span>
                 </div>
               </div>
             </div>

@@ -15,11 +15,13 @@ const imageURL = 'http://www.travelbro.top/'
 
 const Dashboard = () => {
   const [post, setPost] = useState('')
+  const [Dp, setDp] = useState('')
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
     'page_to_load',
     'UserInfo',
+    'UserDp',
   ])
   const [CurrentPage, setCurrentPage] = useState({
     PageLoad: cookies.page_to_load,
@@ -48,8 +50,10 @@ const Dashboard = () => {
       window.location.href = '/signin'
     }
     const UserData = cookies.UserInfo
+    const UserDp = cookies.UserDp
     if (UserData !== undefined || UserData !== '') {
       setPost(UserData)
+      setDp(UserDp)
     }
   }, [cookies])
   const CompleteSign = () => {
@@ -87,7 +91,7 @@ const Dashboard = () => {
           <div className="profile-pic-div center">
             <div className="profile-icon profile-pic icon">
               <img
-                src={imageURL + post.profile_picture}
+                src={imageURL + Dp}
                 alt={<CgProfile size={90} />}
                 className="profile-pic"
               />

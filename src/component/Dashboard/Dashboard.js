@@ -54,6 +54,7 @@ const Dashboard = () => {
     if (UserData !== undefined || UserData !== '') {
       setPost(UserData)
       setDp(UserDp)
+      alert(Dp)
     }
   }, [cookies])
   const CompleteSign = () => {

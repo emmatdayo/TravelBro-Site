@@ -84,49 +84,44 @@ const SearchTrips = () => {
     })
   }
 
-  const JoinTrip = (e) => {
-    const TargetId = e.target.id
-    const idArray = TargetId.split(' ')
-    const id = idArray[0]
-    const Tprice = idArray[1]
+  const config = {
+    reference: new Date().getTime().toString(),
+    email: cookies.user,
+    amount: post.trip_price,
+    publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
+    //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
+  }
+  //console.log(post[0].trip_price)
+  // you can call this function anything
+  const onSuccess = (reference, e) => {
+    // Implementation for whatever you want to do with reference and after success call.
+    const id = e.target.id
     const user = cookies.user
-    console.log(Tprice)
-
-    const config = {
-      reference: new Date().getTime().toString(),
-      email: cookies.user,
-      amount: post.trip_price,
-      publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
-      //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
+    alert(user)
+    const datas = {
+      request: 'join_trip',
+      data: id,
+      user: user,
     }
-    //console.log(post[0].trip_price)
-    // you can call this function anything
-    const onSuccess = (reference, e) => {
-      // Implementation for whatever you want to do with reference and after success call.
+    const new_data = JSON.stringify(datas)
+    //const new_data2 = JSON.parse(new_data)
 
-      const datas = {
-        request: 'join_trip',
-        data: id,
-        user: user,
-      }
-      const new_data = JSON.stringify(datas)
-      //const new_data2 = JSON.parse(new_data)
+    axios.post(baseURL, new_data).then((response) => {
+      const Join_trip = response.data
+      alert(Join_trip)
+    })
+    console.log(reference)
+    alert(reference)
+  }
 
-      axios.post(baseURL, new_data).then((response) => {
-        const Join_trip = response.data
-        alert(Join_trip)
-      })
-      console.log(reference)
-      alert(reference)
-    }
+  // you can call this function anything
+  const onClose = () => {
+    // implementation for  whatever you want to do when the Paystack dialog closed.
+    console.log('closed')
+  }
+  const initializePayment = usePaystackPayment(config)
 
-    // you can call this function anything
-    const onClose = () => {
-      // implementation for  whatever you want to do when the Paystack dialog closed.
-      console.log('closed')
-    }
-    const initializePayment = usePaystackPayment(config)
-
+  const JoinTrip = (e) => {
     initializePayment(onSuccess, onClose)
   }
   return (
@@ -240,7 +235,7 @@ const SearchTrips = () => {
                 <td className="button ">
                   <BsCreditCardFill
                     className="center delete-icon"
-                    id={data1.trip_id + ' ' + data1.trip_price}
+                    id={data1.trip_id}
                     onClick={JoinTrip}
                     color="#0695e8"
                     size={45}

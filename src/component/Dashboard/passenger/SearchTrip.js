@@ -68,10 +68,10 @@ const SearchTrips = () => {
 
     axios.post(baseURL, new_data).then((response) => {
       const search_data = response.data
-      //alert(search_data)
+      alert(search_data)
       setPost(search_data)
       //alert(post)
-      setPrice(post[0].trip_price)
+      setPrice(search_data[0])
       console.log(post[0].trip_price)
       console.log(price)
       setCookie('input', inputs, { path: '/' })

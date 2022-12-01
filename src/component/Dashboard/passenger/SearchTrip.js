@@ -13,7 +13,7 @@ import { usePaystackPayment } from 'react-paystack'
 const SearchTrips = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState([])
-  const [price, setPrice] = useState([])
+  const [price, setPrice] = useState('')
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',

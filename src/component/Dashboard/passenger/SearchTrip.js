@@ -73,7 +73,7 @@ const SearchTrips = () => {
       console.log(amounts)
       setPost(search_data)
       //alert(post)
-      setPrice(amounts)
+      setPrice('noooooo')
       console.log(post[0].trip_price)
       console.log(price)
       setCookie('input', inputs, { path: '/' })
@@ -87,7 +87,7 @@ const SearchTrips = () => {
   const config = {
     reference: new Date().getTime().toString(),
     email: cookies.user,
-    amount: post.trip_price,
+    amount: post[0].trip_price,
     publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
     //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
   }

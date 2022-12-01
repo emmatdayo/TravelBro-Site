@@ -70,6 +70,7 @@ const SearchTrips = () => {
       const search_data = response.data
       const amounts = search_data[0].trip_price
       console.log(search_data)
+      console.log(amounts)
       setPost(search_data)
       //alert(post)
       setPrice(amounts)

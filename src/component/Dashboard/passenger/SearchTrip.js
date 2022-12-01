@@ -68,7 +68,7 @@ const SearchTrips = () => {
 
     axios.post(baseURL, new_data).then((response) => {
       const search_data = response.data
-      alert(search_data)
+      console.log(search_data)
       setPost(search_data)
       //alert(post)
       setPrice(search_data[0])

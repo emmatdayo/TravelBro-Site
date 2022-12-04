@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { Cookies } from 'react-cookie'
 import Modal from 'react-bootstrap/Modal'
+import { Button } from 'bootstrap'
 
 const cookies = new Cookies()
 
@@ -14,6 +15,9 @@ const CreateTrip = () => {
   const [show, setShow] = useState(false)
 
   const baseURL = 'https://www.travelbro.top/api.php'
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   useEffect(() => {
     ViewVehicle()

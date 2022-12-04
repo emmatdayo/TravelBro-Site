@@ -81,7 +81,7 @@ const Signup = () => {
         <div className="row">
           <div className="col-sm-5"></div>
           <div className="col-sm-7 center s-container">
-            <div className="signup-container center ">
+            <div className="signup-container border center ">
               <div className="logo-container center ">
                 <img src={logo} alt="Travelbro" className="logo-img" />
               </div>

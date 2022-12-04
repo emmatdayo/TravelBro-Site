@@ -80,7 +80,7 @@ const CreateTrip = () => {
     console.log(inputs)
     //alert('done')
 
-    //setShow(true)
+    setShow(true)
 
     const user = cookies.get('user')
     const datas = {

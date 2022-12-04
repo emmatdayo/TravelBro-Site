@@ -104,10 +104,8 @@ const CreateTrip = () => {
   return (
     <div className="">
       <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          {post}
-          Woohoo, you're reading this text in a modal!
-        </Modal.Body>
+        {post}
+        Woohoo, you're reading this text in a modal!
       </Modal>
       <div className="row">
         <div className="col-sm"></div>

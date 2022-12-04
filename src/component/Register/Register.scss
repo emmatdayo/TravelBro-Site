@@ -9,13 +9,18 @@
   .signup-container {
     //display: flex;
     //align-items: center;
-    width: 100%;
-
+    width: 95%;
+    padding: 0px 0 10px 0;
     position: relative;
     top: 7vh;
-
+    border-radius: 10px;
     transform: translateZ(-50%);
 
+    .tape {
+      width: 100%;
+      background-color: #4f52ff;
+      height: 5px;
+    }
     .logo-container {
       //margin-bottom: 50px;
       //display: none;

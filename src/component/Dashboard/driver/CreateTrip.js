@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { Cookies } from 'react-cookie'
+import Modal from 'react-bootstrap/Modal'
 
 const cookies = new Cookies()
 
@@ -10,12 +11,41 @@ const CreateTrip = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState('')
   const [vehicle, SetVehicle] = useState([])
+  const [show, setShow] = useState(false)
 
   const baseURL = 'https://www.travelbro.top/api.php'
 
   useEffect(() => {
     ViewVehicle()
   }, [])
+
+  const ModalAlert = () => {
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
+
+    return (
+      <>
+        <Button variant="primary" onClick={handleShow}>
+          Launch demo modal
+        </Button>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    )
+  }
 
   const change_handler = (e) => {
     const name = e.target.name
@@ -45,6 +75,9 @@ const CreateTrip = () => {
     e.preventDefault()
     console.log(inputs)
     //alert('done')
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
+    handleShow()
     const user = cookies.get('user')
     const datas = {
       request: 'create_trip',
@@ -57,13 +90,28 @@ const CreateTrip = () => {
 
     axios.post(baseURL, new_data).then((response) => {
       setPost(response.data)
-      alert(response.data)
+      //alert(response.data)
+
       //alert(response.data)
       //alert(JSON.parse(new_data))
     })
   }
   return (
     <div className="">
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div className="row">
         <div className="col-sm"></div>
         <div className="col-sm-7 center s-container">

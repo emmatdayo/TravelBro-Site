@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
-
+import { FaCarSide, FaPowerOff } from 'react-icons/fa'
 import navbarimg from '../../images/travelbro-blue-nav.png'
 import { MdOutlinePersonOutline } from 'react-icons/md'
 import { useCookies } from 'react-cookie'
@@ -25,13 +25,7 @@ const Dashnavbar = () => {
   ])
   return (
     <>
-      <Button
-        variant="primary"
-        className="justify-content-end"
-        onClick={handleShow}
-      >
-        Launch
-      </Button>
+      <FaBars className="" onClick={handleShow} />
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>

@@ -79,8 +79,8 @@ const Signup = () => {
       <div className="my-container">
         {post}
         <div className="row">
-          <div className="col-sm-6"></div>
-          <div className="col-sm-6 center s-container">
+          <div className="col-sm-5"></div>
+          <div className="col-sm-5 center s-container">
             <div className="signup-container border center ">
               <div className="tape"></div>
               <div className="logo-container center ">

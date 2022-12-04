@@ -10,20 +10,20 @@
     //display: flex;
     //align-items: center;
     width: 95%;
-    padding: 2px 0 10px 0;
+    padding: 0px 0 10px 0;
     position: relative;
     top: 7vh;
-    border-radius: 10px;
+    border-radius: 7px;
     transform: translateZ(-50%);
 
     .tape {
       width: 100%;
       background-color: #4f52ff;
-      border-radius: 15px 25px 0 0;
+      border-radius: 10px 10px 0 0;
       height: 5px;
     }
     .logo-container {
-      //margin-bottom: 50px;
+      margin-top: 20px;
       //display: none;
       width: 25%;
       //height: 45px;

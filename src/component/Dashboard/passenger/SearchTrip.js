@@ -126,7 +126,6 @@ const SearchTrips = () => {
   }
   return (
     <div className="SearchTrip">
-      {' '}
       <form onSubmit={submit_handler}>
         <div className="banner-form2 row">
           <div className="rows col-sm-3">
@@ -211,7 +210,6 @@ const SearchTrips = () => {
               <tr className="middle-row">
                 <td>
                   <div className="d-info d-name">{data1.name}</div>
-                  <div className="d-info">{data1.tel}</div>
                 </td>
                 <td className="arrow-icon ">
                   <HiOutlineArrowNarrowDown size={45} />

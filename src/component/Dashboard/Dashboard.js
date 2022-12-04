@@ -122,9 +122,9 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="display-container ">
-          <div className="row bg-dark container-fluid center nav-icon-div">
+          <div className="row bg-dark nav-icon-div">
             <div className="col-10"></div>
-            <div className="col-2 pl-2">
+            <div className="col-2 center pl-2">
               {' '}
               <Dashnavbar />
             </div>

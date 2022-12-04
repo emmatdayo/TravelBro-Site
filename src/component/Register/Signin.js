@@ -58,7 +58,7 @@ const Signup = () => {
     })
 
     if (post == 'true') {
-      alert('redirect to dashboard')
+      // alert('redirect to dashboard')
     }
   }
 

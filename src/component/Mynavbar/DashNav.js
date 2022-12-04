@@ -24,7 +24,11 @@ const Dashnavbar = () => {
   ])
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button
+        variant="primary"
+        className="justify-content-end"
+        onClick={handleShow}
+      >
         Launch
       </Button>
 

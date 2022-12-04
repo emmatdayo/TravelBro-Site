@@ -104,7 +104,7 @@ const CreateTrip = () => {
   }
   return (
     <div className="">
-      <BModal />
+      <BModal content={post} />
       <div className="row">
         <div className="col-sm"></div>
         <div className="col-sm-7 center s-container">

@@ -149,6 +149,16 @@ const Signup = () => {
                       required
                     />
                   </div>
+                  <div className="form-group referal-input-div center mb-4">
+                    <input
+                      type="text"
+                      className=" referal-input input"
+                      name="referal"
+                      placeholder=" Referal Cade"
+                      value={inputs.referal}
+                      onChange={change_handler}
+                    />
+                  </div>
                   <div className="button-div center mb-4">
                     <input
                       type="submit"

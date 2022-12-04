@@ -79,9 +79,9 @@ const CreateTrip = () => {
     e.preventDefault()
     console.log(inputs)
     //alert('done')
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
-    handleShow()
+
+    setShow(true)
+
     const user = cookies.get('user')
     const datas = {
       request: 'create_trip',

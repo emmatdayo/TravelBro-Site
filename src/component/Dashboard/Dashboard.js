@@ -122,7 +122,9 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="display-container ">
-          <Dashnavbar />
+          <div align="right" className="border">
+            <Dashnavbar />
+          </div>
           <CompleteSign />
           <Present />
         </div>

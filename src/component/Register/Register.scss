@@ -1,9 +1,19 @@
 .footer-container {
   //display: none;
 }
+.signup-image-div {
+  margin-top: 12%;
+  margin-left: 15%;
+  width: 85%;
+  //display: none;
+  .signup-image {
+    width: 100%;
+    height: 100%;
+  }
+}
 .s-container {
   position: relative;
-  height: 95vh;
+  height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
   .signup-container {
@@ -223,5 +233,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 750px) {
+  .signup-image-div {
+    display: none;
   }
 }

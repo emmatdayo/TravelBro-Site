@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
 import Mynavbar from '../Mynavbar/Mynavbar'
+import Signin from '../../images/signup.png'
 
 const Signup = () => {
   const [inputs, setInputs] = useState('')
@@ -79,7 +80,11 @@ const Signup = () => {
       <div className="my-container">
         {post}
         <div className="row">
-          <div className="col-sm-5"></div>
+          <div className="col-sm-5">
+            <div className="signup-image-div center">
+              <img src={Signin} className="signup-image" />
+            </div>
+          </div>
           <div className="col-sm-5 center s-container">
             <div className="signup-container border center ">
               <div className="tape"></div>

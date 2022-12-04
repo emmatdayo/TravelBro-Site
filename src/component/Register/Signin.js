@@ -5,6 +5,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
 import Mynavbar from '../Mynavbar/Mynavbar'
+import Signin from '../../images/signin.png'
 
 const Signup = () => {
   const [inputs, setInputs] = useState({})
@@ -71,8 +72,13 @@ const Signup = () => {
       <Mynavbar />
       <div className="my-container">
         <div className="row">
-          <div className="col-sm-3"></div>
-          <div className="col-sm-6 s-container">
+          <div className="col-sm-5">
+            <div className="signup-image-div ml-2 center">
+              <img src={Signin} className="signup-image" />
+            </div>
+          </div>
+          <div className="col-sm-1"></div>
+          <div className="col-sm-5 s-container">
             <div className="signin-container  ">
               <div className="logo-container center ">
                 <img src={logo} alt="Travelbro" className="logo-img" />
@@ -130,7 +136,6 @@ const Signup = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-3"></div>
         </div>
       </div>
     </>

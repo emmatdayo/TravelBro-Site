@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Cookies } from 'react-cookie'
 import Modal from 'react-bootstrap/Modal'
 import { Button } from 'bootstrap'
+import React from 'react'
 
 const cookies = new Cookies()
 

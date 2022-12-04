@@ -25,7 +25,7 @@ const Dashnavbar = () => {
   ])
   return (
     <>
-      <FaBars className="" onClick={handleShow} />
+      <FaBars className="mr-5" onClick={handleShow} />
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>

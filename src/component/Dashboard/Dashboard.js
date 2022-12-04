@@ -125,7 +125,6 @@ const Dashboard = () => {
           <div className="row bg-dark ">
             <div className="col-10"></div>
             <div className="col-2 nav-icon-div center pl-2">
-              {' '}
               <Dashnavbar />
             </div>
           </div>

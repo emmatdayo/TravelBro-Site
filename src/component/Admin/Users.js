@@ -50,6 +50,11 @@ const Users = () => {
       sortable: true,
     },
     {
+      name: 'Referal Code',
+      selector: (row) => row.referal,
+      sortable: true,
+    },
+    {
       name: 'Status',
       selector: (row) => row.user_status,
       sortable: true,

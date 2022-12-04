@@ -4,6 +4,7 @@ import SearchTrips from './SearchTrip'
 import { useEffect, useState } from 'react'
 import PassengerTrip from './PassengerTrips'
 import { useCookies } from 'react-cookie'
+import Dashnavbar from '../../Mynavbar/DashNav'
 
 const Passenger = () => {
   const [selected, setSelected] = useState(false)
@@ -44,6 +45,7 @@ const Passenger = () => {
   }
   return (
     <div className="my-container">
+      <Dashnavbar />
       <div className="image-div">
         <img
           className="passenger-image"

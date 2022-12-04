@@ -79,8 +79,8 @@ const Signup = () => {
       <div className="my-container">
         {post}
         <div className="row">
-          <div className="col-sm"></div>
-          <div className="col-sm-5 center s-container">
+          <div className="col-sm-5"></div>
+          <div className="col-sm-7 center s-container">
             <div className="signup-container center ">
               <div className="logo-container center ">
                 <img src={logo} alt="Travelbro" className="logo-img" />
@@ -189,7 +189,6 @@ const Signup = () => {
               </form>
             </div>
           </div>
-          <div className="col-sm"></div>
         </div>
       </div>
     </>

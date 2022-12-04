@@ -24,7 +24,9 @@ const Users = () => {
         item.date.toLowerCase().includes(filterText.toLowerCase())) ||
       (item.user_id &&
         item.user_id.toLowerCase().includes(filterText.toLowerCase())) ||
-      (item.tel && item.tel.toLowerCase().includes(filterText.toLowerCase()))
+      (item.tel && item.tel.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.referal &&
+        item.referal.toLowerCase().includes(filterText.toLowerCase()))
   )
   const columns = [
     {

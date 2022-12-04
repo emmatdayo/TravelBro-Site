@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
-
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import { Link } from 'react-router-dom'
+import Nav from 'react-bootstrap/Nav'
+
 import navbarimg from '../../images/travelbro-blue-nav.png'
 import { MdOutlinePersonOutline } from 'react-icons/md'
 import { useCookies } from 'react-cookie'
@@ -37,8 +38,32 @@ const Dashnavbar = () => {
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <Nav className="justify-content-end flex-grow-1 pe-3">
+            <Nav.Link as={Link} to={'/'}>
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to={'/about '}>
+              About
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to={'/dashboard '}
+              onClick={() => {
+                setCookie('page_to_load', 'Driver', { path: '/' })
+              }}
+            >
+              Publish a Ride
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to={'/signup '}
+              onClick={() => {
+                setCookie('page_to_load', 'Driver', { path: '/' })
+              }}
+            >
+              Sign Up
+            </Nav.Link>
+          </Nav>
         </Offcanvas.Body>
       </Offcanvas>
     </>

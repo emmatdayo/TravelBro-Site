@@ -26,7 +26,7 @@ const Dashnavbar = () => {
   return (
     <>
       <FaBars
-        className=" nav-icon border mr-5 pt-2"
+        className=" nav-icon border pb-3 pt-3"
         size={40}
         color="white"
         onClick={handleShow}

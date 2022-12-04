@@ -123,8 +123,8 @@ const Dashboard = () => {
         </div>
         <div className="display-container ">
           <div className="row bg-dark border nav-icon-div">
-            <div className="col-9"></div>
-            <div className="col-3">
+            <div className="col-10"></div>
+            <div className="col-2">
               {' '}
               <Dashnavbar />
             </div>

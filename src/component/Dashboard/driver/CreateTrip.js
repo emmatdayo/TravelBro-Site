@@ -23,7 +23,7 @@ const CreateTrip = () => {
     ViewVehicle()
   }, [])
 
-  const ModalAlert = () => {
+  /*  const ModalAlert = () => {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
@@ -49,7 +49,7 @@ const CreateTrip = () => {
         </Modal>
       </>
     )
-  }
+  }*/
 
   const change_handler = (e) => {
     const name = e.target.name
@@ -80,7 +80,7 @@ const CreateTrip = () => {
     console.log(inputs)
     //alert('done')
 
-    setShow(true)
+    //setShow(true)
 
     const user = cookies.get('user')
     const datas = {

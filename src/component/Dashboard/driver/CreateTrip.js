@@ -6,6 +6,7 @@ import { Cookies } from 'react-cookie'
 import Modal from 'react-bootstrap/Modal'
 import { Button } from 'bootstrap'
 import React from 'react'
+import BModal from './BModal'
 
 const cookies = new Cookies()
 
@@ -81,7 +82,7 @@ const CreateTrip = () => {
     console.log(inputs)
     //alert('done')
 
-    setShow(true)
+    //setShow(true)
 
     const user = cookies.get('user')
     const datas = {
@@ -103,10 +104,7 @@ const CreateTrip = () => {
   }
   return (
     <div className="">
-      <Modal show={show} onHide={handleClose}>
-        {post}
-        Woohoo, you're reading this text in a modal!
-      </Modal>
+      <BModal />
       <div className="row">
         <div className="col-sm"></div>
         <div className="col-sm-7 center s-container">

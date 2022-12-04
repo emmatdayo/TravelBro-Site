@@ -122,8 +122,12 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="display-container ">
-          <div align="right" className="pr-3">
-            <Dashnavbar />
+          <div className="row bg-dark nav-icon-div">
+            <div className="col-8"></div>
+            <div className="col-4">
+              {' '}
+              <Dashnavbar />
+            </div>
           </div>
           <CompleteSign />
           <Present />

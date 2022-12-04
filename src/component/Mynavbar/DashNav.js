@@ -25,7 +25,12 @@ const Dashnavbar = () => {
   ])
   return (
     <>
-      <FaBars className=" nav-icon mr-5 pt-2" size={40} onClick={handleShow} />
+      <FaBars
+        className=" nav-icon mr-5 pt-2"
+        size={40}
+        color="white"
+        onClick={handleShow}
+      />
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>

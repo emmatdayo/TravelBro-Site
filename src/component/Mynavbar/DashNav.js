@@ -25,11 +25,15 @@ const Dashnavbar = () => {
   ])
   return (
     <>
-      <FaBars className="mr-5 pt-2" size={40} onClick={handleShow} />
+      <FaBars
+        className=" nav-icon border mr-5 pt-2"
+        size={40}
+        onClick={handleShow}
+      />
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Travelbro</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column flex-grow-1 pe-3">

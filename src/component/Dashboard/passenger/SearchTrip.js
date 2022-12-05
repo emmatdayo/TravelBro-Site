@@ -13,6 +13,7 @@ import { usePaystackPayment } from 'react-paystack'
 const SearchTrips = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState([])
+  const [seatNumber, setSeatNumber] = useState(1)
   const [price, setPrice] = useState('')
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
@@ -171,7 +172,6 @@ const SearchTrips = () => {
                   placeholder="1"
                   value={inputs.passengers}
                   onChange={change_handler}
-                  required
                 />
               </div>
             </div>
@@ -214,7 +214,16 @@ const SearchTrips = () => {
                 <td className="arrow-icon ">
                   <HiOutlineArrowNarrowDown size={45} />
                 </td>
-                <td></td>
+                <td>
+                  <input
+                    type="number"
+                    className="text-box pas"
+                    name="seat_number_booked"
+                    placeholder="1"
+                    value={seatNumber}
+                    onChange={(e) => setSeatNumber(e.target.value)}
+                  />
+                </td>
                 <td></td>
               </tr>
 

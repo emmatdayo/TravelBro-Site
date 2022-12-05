@@ -107,7 +107,6 @@ const CreateTrip = () => {
   }
   return (
     <div className="">
-      <DisplayModal />
       <div className="row">
         <div className="col-sm"></div>
         <div className="col-sm-7 center s-container">

@@ -228,7 +228,7 @@ const SearchTrips = () => {
                 <td className="pb-4 destination ">{data1.destination}</td>
                 <td className="seats ">
                   <MdOutlinePersonOutline size={40} />
-                  {data1.seats}
+                  {data1.trip_seats}
                 </td>
                 <td className="button ">
                   <BsCreditCardFill

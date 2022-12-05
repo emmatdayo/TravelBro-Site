@@ -132,6 +132,7 @@ const SearchTrips = () => {
     const Tprice = IdArray[1]
     const TotalPrice1 = Tprice * seatNumber
     setPrice(TotalPrice1)
+    console.log(TotalPrice1)
     console.log(price)
     Pstack()
   }

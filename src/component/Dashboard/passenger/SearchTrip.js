@@ -132,10 +132,11 @@ const SearchTrips = () => {
     const id = IdArray[0]
     const Tprice = IdArray[1]
     const TotalPrice1 = Tprice * seatNumber
+    setCookie('price', TotalPrice1, { path: '/' })
     setPrice(TotalPrice1)
     console.log(TotalPrice1)
     console.log(price)
-    setCookie('price', TotalPrice1, { path: '/' })
+    console.log(cookies.price)
 
     Pstack()
   }

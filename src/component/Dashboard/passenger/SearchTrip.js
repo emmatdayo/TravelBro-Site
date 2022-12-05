@@ -123,7 +123,7 @@ const SearchTrips = () => {
   const initializePayment = usePaystackPayment(config)
 
   const JoinTrip = (e) => {
-    const TargetId = e.target.id
+    const TargetId = e.currentTarget.id
     const IdArray = TargetId.split(' ')
     const id = IdArray[0]
     const price = IdArray[1]

@@ -3,13 +3,20 @@ import { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
+import BModal from './BModal'
 
 const RegVehicle = () => {
   const [inputs, setInputs] = useState('')
   const [file, setFile] = useState('')
+  const [post, setPost] = useState('')
+
   const [cookies, setCookie] = useCookies(['user', 'status'])
 
   const baseURL = 'https://www.travelbro.top/UploadApi.php'
+
+  useEffect(() => {
+    DisplayModal()
+  }, [post])
 
   const change_handler = (e) => {
     const name = e.target.name
@@ -20,6 +27,12 @@ const RegVehicle = () => {
   const file_handler = (e) => {
     const fileImg = e.target.files[0]
     setFile(fileImg)
+  }
+
+  const DisplayModal = () => {
+    if (post) {
+      return <BModal content={post} />
+    }
   }
 
   const submit_handler = (e) => {
@@ -43,11 +56,14 @@ const RegVehicle = () => {
 
     axios.post(baseURL, formData).then((response1) => {
       console.log(response1.data)
-      alert('Vehicle Registered')
+      setPost(response1.data)
+
+      DisplayModal()
     })
   }
   return (
     <div className="">
+      <DisplayModal />
       <div className="row">
         <div className="col-sm"></div>
         <div className="col-sm-7 center s-container">

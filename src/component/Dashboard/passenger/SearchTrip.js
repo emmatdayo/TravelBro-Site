@@ -47,7 +47,7 @@ const SearchTrips = () => {
       })
     }
   }, [])
-
+  const TotalPrice = () => {}
   const change_handler = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -71,12 +71,12 @@ const SearchTrips = () => {
       const search_data = response.data
       const amounts = search_data[0].trip_price
       console.log(search_data)
-      console.log(amounts)
       setPost(search_data)
+      console.log(post)
       //alert(post)
-      setPrice('noooooo')
-      console.log(post[0].trip_price)
-      console.log(price)
+      //setPrice('noooooo')
+      //console.log(post[0].trip_price)
+      //console.log(price)
       setCookie('input', inputs, { path: '/' })
 
       //const json_data = JSON.parse(post)
@@ -123,7 +123,13 @@ const SearchTrips = () => {
   const initializePayment = usePaystackPayment(config)
 
   const JoinTrip = (e) => {
-    initializePayment(onSuccess, onClose)
+    const TargetId = e.target.id
+    const IdArray = TargetId.split(' ')
+    const id = IdArray[0]
+    const price = IdArray[1]
+    const TotalPrice1 = price * seatNumber
+    alert(TotalPrice1)
+    //initializePayment(onSuccess, onClose)
   }
   return (
     <div className="SearchTrip">
@@ -242,7 +248,7 @@ const SearchTrips = () => {
                 <td className="button ">
                   <BsCreditCardFill
                     className="center delete-icon"
-                    id={data1.trip_id}
+                    id={data1.trip_id + ' ' + data1.trip_price}
                     onClick={JoinTrip}
                     color="#0695e8"
                     size={45}

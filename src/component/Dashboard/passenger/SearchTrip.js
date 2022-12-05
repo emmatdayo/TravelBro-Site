@@ -128,6 +128,7 @@ const SearchTrips = () => {
     const id = IdArray[0]
     const price = IdArray[1]
     const TotalPrice1 = price * seatNumber
+    alert(TargetId)
     alert(price)
     alert(seatNumber)
     alert(TotalPrice1)
@@ -225,7 +226,7 @@ const SearchTrips = () => {
                 <td>
                   <input
                     type="number"
-                    className="text-box pas"
+                    className="text-box seat-numb"
                     name="seat_number_booked"
                     placeholder="1"
                     value={seatNumber}

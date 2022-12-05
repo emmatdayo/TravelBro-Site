@@ -20,6 +20,7 @@ const SearchTrips = () => {
     'status',
     'page_to_load',
     'input',
+    'price',
   ])
   const imageURL = 'http://www.travelbro.top/'
   const baseURL = 'https://www.travelbro.top/api.php'
@@ -88,7 +89,7 @@ const SearchTrips = () => {
   const config = {
     reference: new Date().getTime().toString(),
     email: cookies.user,
-    amount: price,
+    amount: cookies.price,
     publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
     //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
   }
@@ -134,6 +135,8 @@ const SearchTrips = () => {
     setPrice(TotalPrice1)
     console.log(TotalPrice1)
     console.log(price)
+    setCookie('price', TotalPrice1, { path: '/' })
+
     Pstack()
   }
   return (

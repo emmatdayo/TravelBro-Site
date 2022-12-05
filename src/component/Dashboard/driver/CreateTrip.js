@@ -24,7 +24,9 @@ const CreateTrip = () => {
   useEffect(() => {
     ViewVehicle()
   }, [])
-
+  useEffect(() => {
+    DisplayModal()
+  }, [post])
   /*  const ModalAlert = () => {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -59,7 +61,9 @@ const CreateTrip = () => {
     setInputs((values) => ({ ...values, [name]: value }))
   }
   const DisplayModal = () => {
-    return <BModal content={post} />
+    if (post) {
+      return <BModal content={post} />
+    }
   }
 
   const ViewVehicle = () => {
@@ -107,6 +111,7 @@ const CreateTrip = () => {
   }
   return (
     <div className="">
+      <DisplayModal />
       <div className="row">
         <div className="col-sm"></div>
         <div className="col-sm-7 center s-container">

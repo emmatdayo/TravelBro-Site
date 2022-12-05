@@ -58,6 +58,9 @@ const CreateTrip = () => {
     const value = e.target.value
     setInputs((values) => ({ ...values, [name]: value }))
   }
+  const DisplayModal = () => {
+    return <BModal content={post} />
+  }
 
   const ViewVehicle = () => {
     const user = cookies.get('user')
@@ -97,14 +100,14 @@ const CreateTrip = () => {
     axios.post(baseURL, new_data).then((response) => {
       setPost(response.data)
       //alert(response.data)
-
+      DisplayModal()
       //alert(response.data)
       //alert(JSON.parse(new_data))
     })
   }
   return (
     <div className="">
-      <BModal content={post} />
+      <DisplayModal />
       <div className="row">
         <div className="col-sm"></div>
         <div className="col-sm-7 center s-container">

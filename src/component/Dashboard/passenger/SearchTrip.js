@@ -88,7 +88,7 @@ const SearchTrips = () => {
   const config = {
     reference: new Date().getTime().toString(),
     email: cookies.user,
-    amount: post.trip_price,
+    amount: price,
     publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
     //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
   }
@@ -121,6 +121,9 @@ const SearchTrips = () => {
     console.log('closed')
   }
   const initializePayment = usePaystackPayment(config)
+  const Pstack = () => {
+    initializePayment(onSuccess, onClose)
+  }
 
   const JoinTrip = (e) => {
     const TargetId = e.currentTarget.id
@@ -130,7 +133,7 @@ const SearchTrips = () => {
     const TotalPrice1 = Tprice * seatNumber
     setPrice(TotalPrice1)
     console.log(price)
-    //initializePayment(onSuccess, onClose)
+    Pstack()
   }
   return (
     <div className="SearchTrip">

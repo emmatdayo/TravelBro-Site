@@ -14,7 +14,7 @@ const SearchTrips = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState([])
   const [seatNumber, setSeatNumber] = useState(1)
-  const [price, setPrice] = useState('')
+  //const [price, setPrice] = useState('')
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
@@ -128,6 +128,8 @@ const SearchTrips = () => {
     const id = IdArray[0]
     const price = IdArray[1]
     const TotalPrice1 = price * seatNumber
+    alert(price)
+    alert(seatNumber)
     alert(TotalPrice1)
     //initializePayment(onSuccess, onClose)
   }

@@ -125,7 +125,7 @@ const Dashboard = () => {
         <div className="display-container ">
           <div className="row bg-dark ">
             <div className="col-10">
-              <div className="dash-logo-div">
+              <div align="left" className="dash-logo-div">
                 <img src={Logo} className="dash-logo" />
               </div>
             </div>

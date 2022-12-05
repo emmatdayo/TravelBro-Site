@@ -124,7 +124,11 @@ const Dashboard = () => {
         </div>
         <div className="display-container ">
           <div className="row bg-dark ">
-            <div className="col-10"></div>
+            <div className="col-10">
+              <div className="dash-logo-div">
+                <img src={Logo} className="dash-logo" />
+              </div>
+            </div>
             <div className="col-2 nav-icon-div center pl-2">
               <Dashnavbar />
             </div>

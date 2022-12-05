@@ -10,7 +10,7 @@ import Signin from './../Register/Signin'
 import { useCookies } from 'react-cookie'
 import CompleteSignup from './driver/Modal'
 import Dashnavbar from '../Mynavbar/DashNav'
-import Logo from '../../images/travelbrowhite.png'
+import Logo from '../../images/travelbro-blue-nav.png'
 
 const baseURL = 'https://www.travelbro.top/api.php'
 const imageURL = 'http://www.travelbro.top/'

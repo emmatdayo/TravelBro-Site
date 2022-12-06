@@ -160,7 +160,7 @@ const Signup = () => {
                       type="text"
                       className=" referal-input input"
                       name="referal"
-                      placeholder=" Referal Cade"
+                      placeholder=" Referral Code"
                       value={inputs.referal}
                       onChange={change_handler}
                     />

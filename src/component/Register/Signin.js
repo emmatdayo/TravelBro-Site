@@ -123,7 +123,7 @@ const Signup = () => {
                 </form>
 
                 <div className="signin-link center">
-                  Already a member{' '}
+                  Don't have an account?{' '}
                   <span
                     className="link text-primary"
                     onClick={() => {

@@ -11,7 +11,7 @@ import Footer from '../Footer/Footer'
 import Mynavbar from '../Mynavbar/Mynavbar'
 import { useCookies } from 'react-cookie'
 
-const baseURL = 'http://localhost/emart/test.php'
+//const baseURL = 'http://localhost/emart/test.php'
 
 const Home = () => {
   const [inputs, setInputs] = useState({})

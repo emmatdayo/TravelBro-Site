@@ -134,7 +134,7 @@ const SearchTrips = () => {
     const TotalPrice1 = Tprice * seatNumber * 100
     const testTotalPrice = TotalPrice1
     setCookie('price', TotalPrice1, { path: '/' })
-    setStatePrice(TotalPrice1)
+    setStatePrice(testTotalPrice)
     console.log(TotalPrice1)
     console.log(statePrice)
     console.log(testTotalPrice)

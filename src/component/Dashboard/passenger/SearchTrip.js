@@ -14,7 +14,7 @@ const SearchTrips = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState([])
   const [seatNumber, setSeatNumber] = useState(1)
-  const [price, setPrice] = useState('')
+  const [statePrice, setStatePrice] = useState('')
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
@@ -134,9 +134,10 @@ const SearchTrips = () => {
     const TotalPrice1 = Tprice * seatNumber * 100
     const testTotalPrice = TotalPrice1
     setCookie('price', TotalPrice1, { path: '/' })
-    setPrice(TotalPrice1)
+    setStatePrice(TotalPrice1)
     console.log(TotalPrice1)
-    console.log(price)
+    console.log(statePrice)
+    console.log(testTotalPrice)
     console.log(cookies.price)
 
     Pstack()

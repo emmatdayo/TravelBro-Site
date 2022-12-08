@@ -150,7 +150,7 @@ const SearchTrips = () => {
   }
   useEffect(() => {
     Pstack()
-  }, [seatNumber])
+  }, [statePrice])
   return (
     <div className="SearchTrip">
       <form onSubmit={submit_handler}>

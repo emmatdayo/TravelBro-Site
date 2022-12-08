@@ -133,15 +133,19 @@ const SearchTrips = () => {
     const Tprice = IdArray[1]
     const TotalPrice1 = Tprice * seatNumber * 100
     const testTotalPrice = TotalPrice1
-    setCookie('price', TotalPrice1, { path: '/' })
+    //setCookie('price', TotalPrice1, { path: '/' })
     setStatePrice(testTotalPrice)
     console.log(TotalPrice1)
     console.log(statePrice)
     console.log(testTotalPrice)
     console.log(cookies.price)
-    if (cookies.price) {
-      Pstack()
+    const TestAwait = async () => {
+      setCookie('price', TotalPrice1, { path: '/' })
     }
+    TestAwait().then(Pstack())
+    /*if (cookies.price) {
+      Pstack()
+    }*/
   }
   return (
     <div className="SearchTrip">

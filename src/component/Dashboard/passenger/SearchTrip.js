@@ -49,9 +49,6 @@ const SearchTrips = () => {
     }
   }, [])
 
-  useEffect(() => {
-    Pstack()
-  }, [cookies.price])
   const TotalPrice = () => {}
   const change_handler = (e) => {
     const name = e.target.name
@@ -151,6 +148,9 @@ const SearchTrips = () => {
       Pstack()
     }*/
   }
+  useEffect(() => {
+    Pstack()
+  }, [seatNumber])
   return (
     <div className="SearchTrip">
       <form onSubmit={submit_handler}>

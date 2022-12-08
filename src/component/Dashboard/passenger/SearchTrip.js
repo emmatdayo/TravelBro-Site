@@ -14,7 +14,7 @@ const SearchTrips = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState([])
   const [seatNumber, setSeatNumber] = useState(1)
-  const [statePrice, setStatePrice] = useState('')
+  const [statePrice, setStatePrice] = useState(1)
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
@@ -48,6 +48,10 @@ const SearchTrips = () => {
       })
     }
   }, [])
+
+  useEffect(() => {
+    Pstack()
+  }, [cookies.price])
   const TotalPrice = () => {}
   const change_handler = (e) => {
     const name = e.target.name
@@ -139,11 +143,11 @@ const SearchTrips = () => {
     console.log(statePrice)
     console.log(testTotalPrice)
     console.log(cookies.price)
-    const TestAwait = async () => {
+    /*const TestAwait = async () => {
       setCookie('price', TotalPrice1, { path: '/' })
     }
     TestAwait().then(Pstack())
-    /*if (cookies.price) {
+    if (cookies.price) {
       Pstack()
     }*/
   }

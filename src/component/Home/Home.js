@@ -83,7 +83,11 @@ const Home = () => {
                 </div>*/}
 
                 <div className="sub-title ">
-                  Let's help you get to where you want to go at a low price
+                  Traveling? Host a trip or Join private cars going your way
+                </div>
+                <div className="sub-title2 mt-2">
+                  Share your car, make extra money or Join affordable trips,
+                  enjoy comfort.
                 </div>
                 <button
                   className="banner-button btn btn-dark mt-3"
@@ -211,7 +215,7 @@ const Home = () => {
                   onClick={TopLocation}
                   className="location col-10 "
                 >
-                  Lagos <BsArrowRightShort size={25} /> Abuja
+                  Lagos <BsArrowRightShort size={25} /> Abeokuta
                 </div>
                 <div className="pointer col-2 ">&gt;</div>
               </div>
@@ -223,7 +227,7 @@ const Home = () => {
                   onClick={TopLocation}
                   className="location col-10"
                 >
-                  Lagos <BsArrowRightShort size={25} /> Ibadon
+                  Lagos <BsArrowRightShort size={25} /> Ibadan
                 </div>
                 <div className="pointer col-2">&gt;</div>
               </div>
@@ -235,7 +239,7 @@ const Home = () => {
                   onClick={TopLocation}
                   className="location col-10 "
                 >
-                  Lagos <BsArrowRightShort size={25} /> Abeokuta
+                  Lagos <BsArrowRightShort size={25} /> Abuja
                 </div>
                 <div className="pointer col-2 ">&gt;</div>
               </div>
@@ -253,10 +257,10 @@ const Home = () => {
             <div className="col-sm-6 text-container">
               <div className="publish-textarea center">
                 <div className="publish-title mb-2">
-                  Where do you want to drive to?
+                  Traveling with your car?
                 </div>
                 <div className="publish-text mb-3">
-                  Let's make this your least expensive journey ever.
+                  Pick other travelers and get paid
                 </div>
                 <button
                   className="button btn btn-lg btn-primary"
@@ -266,7 +270,7 @@ const Home = () => {
                     window.location.href = '/dashboard'
                   }}
                 >
-                  Publish a ride
+                  Host a Trip
                 </button>
               </div>
             </div>
@@ -279,9 +283,9 @@ const Home = () => {
               <div className="about-textarea center">
                 <div className="about-title mb-2">Learn more about us</div>
                 <div className="about-text mb-3">
-                  At Travelbro, our objective is to make the Whole experience
-                  easier, fun and secure. Let's take you through how it works
-                  and prevent you from scams
+                  At travelbro, our objective is to make road travel experience
+                  convenient, safer, fun, and more affordable. Let's take you
+                  through how it works.
                 </div>
                 <button
                   className="button btn btn-lg btn-primary"

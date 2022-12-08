@@ -139,8 +139,9 @@ const SearchTrips = () => {
     console.log(statePrice)
     console.log(testTotalPrice)
     console.log(cookies.price)
-
-    Pstack()
+    if (cookies.price) {
+      Pstack()
+    }
   }
   return (
     <div className="SearchTrip">

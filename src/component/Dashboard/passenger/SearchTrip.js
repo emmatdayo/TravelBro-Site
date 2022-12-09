@@ -163,7 +163,6 @@ const SearchTrips = () => {
     <div className="SearchTrip">
       <>
         <Modal
-          show={show}
           onHide={handleClose}
           aria-labelledby="contained-modal-title-vcenter"
           centered

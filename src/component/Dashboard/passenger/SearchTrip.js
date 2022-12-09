@@ -172,7 +172,7 @@ const SearchTrips = () => {
             <Modal.Title>Travelbro</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div>ttttttttttttt</div>
+            <div>{cookies.price}</div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

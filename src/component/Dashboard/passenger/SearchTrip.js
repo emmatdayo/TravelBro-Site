@@ -8,6 +8,9 @@ import { MdOutlinePersonOutline, MdDelete } from 'react-icons/md'
 import { BsCreditCardFill } from 'react-icons/bs'
 import { usePaystackPayment } from 'react-paystack'
 
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+
 //const cookies = new Cookies()
 
 const SearchTrips = () => {
@@ -22,8 +25,14 @@ const SearchTrips = () => {
     'input',
     'price',
   ])
+  const [show, setShow] = useState(true)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
   const imageURL = 'http://www.travelbro.top/'
   const baseURL = 'https://www.travelbro.top/api.php'
+
   useEffect(() => {
     if (cookies.input) {
       const user = cookies.user
@@ -149,10 +158,30 @@ const SearchTrips = () => {
     }*/
   }
   useEffect(() => {
-    Pstack()
+    handleShow()
   }, [statePrice])
   return (
     <div className="SearchTrip">
+      <>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Travelbro</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>ttttttttttttt</div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
       <form onSubmit={submit_handler}>
         <div className="banner-form2 row">
           <div className="rows col-sm-3">

@@ -149,6 +149,7 @@ const SearchTrips = () => {
     console.log(statePrice)
     console.log(testTotalPrice)
     console.log(cookies.price)
+    handleShow()
     /*const TestAwait = async () => {
       setCookie('price', TotalPrice1, { path: '/' })
     }
@@ -157,9 +158,7 @@ const SearchTrips = () => {
       Pstack()
     }*/
   }
-  useEffect(() => {
-    handleShow()
-  }, [statePrice])
+  useEffect(() => {}, [statePrice])
   return (
     <div className="SearchTrip">
       <>

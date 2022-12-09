@@ -158,7 +158,7 @@ const SearchTrips = () => {
       Pstack()
     }*/
   }
-  useEffect(() => {}, [statePrice])
+  //useEffect(() => {}, [statePrice])
   return (
     <div className="SearchTrip">
       <>

@@ -15,6 +15,7 @@ const config = {
 const onSuccess = (reference) => {
   // Implementation for whatever you want to do with reference and after success call.
   console.log(reference)
+  alert('success')
 }
 
 // you can call this function anything

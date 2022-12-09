@@ -25,7 +25,7 @@ const SearchTrips = () => {
     'input',
     'price',
   ])
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -163,6 +163,7 @@ const SearchTrips = () => {
     <div className="SearchTrip">
       <>
         <Modal
+          show={show}
           onHide={handleClose}
           aria-labelledby="contained-modal-title-vcenter"
           centered

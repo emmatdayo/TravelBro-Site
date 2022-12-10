@@ -161,26 +161,25 @@ const SearchTrips = () => {
   //useEffect(() => {}, [statePrice])
   return (
     <div className="SearchTrip">
-      <>
-        <Modal
-          show={modalShow}
-          onHide={handleClose}
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Travelbro</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div>{cookies.price}</div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
+      <Modal
+        show={modalShow}
+        onHide={handleClose}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Travelbro</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div>{cookies.price}</div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       <form onSubmit={submit_handler}>
         <div className="banner-form2 row">
           <div className="rows col-sm-3">

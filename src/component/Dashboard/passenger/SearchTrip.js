@@ -135,8 +135,7 @@ const SearchTrips = () => {
     initializePayment(onSuccess, onClose)
   }
 
-  const JoinTrip = (e) => {
-    e.preventDefault()
+  const JoinTrip = () => {
     const TargetId = e.currentTarget.id
     const IdArray = TargetId.split(' ')
     const id = IdArray[0]
@@ -298,7 +297,7 @@ const SearchTrips = () => {
                   <BsCreditCardFill
                     className="center delete-icon"
                     id={data1.trip_id + ' ' + data1.trip_price}
-                    onClick={JoinTrip}
+                    onClick={() => setModalShow(true)}
                     color="#0695e8"
                     size={45}
                   />

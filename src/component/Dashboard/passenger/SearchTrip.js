@@ -130,12 +130,10 @@ const SearchTrips = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log('closed')
   }
-  const initializePayment = usePaystackPayment(config)
-  const Pstack = () => {
-    initializePayment(onSuccess, onClose)
-  }
 
-  const JoinTrip = () => {
+  const Pstack = () => {}
+
+  const JoinTrip = (e) => {
     const TargetId = e.currentTarget.id
     const IdArray = TargetId.split(' ')
     const id = IdArray[0]
@@ -150,6 +148,8 @@ const SearchTrips = () => {
     console.log(cookies.price)
     //handleShow()
     setModalShow(true)
+    const initializePayment = usePaystackPayment(config)
+    initializePayment(onSuccess, onClose)
     /*const TestAwait = async () => {
       setCookie('price', TotalPrice1, { path: '/' })
     }

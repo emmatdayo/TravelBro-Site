@@ -147,7 +147,7 @@ const SearchTrips = () => {
     console.log(testTotalPrice)
     console.log(cookies.price)
     //handleShow()
-    setModalShow(true)
+    //setModalShow(true)
     const initializePayment = usePaystackPayment(config)
     initializePayment(onSuccess, onClose)
     /*const TestAwait = async () => {
@@ -297,7 +297,7 @@ const SearchTrips = () => {
                   <BsCreditCardFill
                     className="center delete-icon"
                     id={data1.trip_id + ' ' + data1.trip_price}
-                    onClick={() => setModalShow(true)}
+                    onClick={JoinTrip}
                     color="#0695e8"
                     size={45}
                   />

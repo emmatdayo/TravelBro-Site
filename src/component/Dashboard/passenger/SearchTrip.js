@@ -25,7 +25,7 @@ const SearchTrips = () => {
     'input',
     'price',
   ])
-  const [modalShow, setModalShow] = useState(true)
+  const [modalShow, setModalShow] = useState(false)
   const handleClose = () => setModalShow(false)
   const handleShow = () => setModalShow(true)
 
@@ -161,25 +161,26 @@ const SearchTrips = () => {
   //useEffect(() => {}, [statePrice])
   return (
     <div className="SearchTrip">
-      <Modal
-        show={modalShow}
-        onHide={handleClose}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Travelbro</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div>{cookies.price}</div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
+      <>
+        <Modal
+          show={modalShow}
+          onHide={handleClose}
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Travelbro</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>{cookies.price}</div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
       <form onSubmit={submit_handler}>
         <div className="banner-form2 row">
           <div className="rows col-sm-3">
@@ -296,6 +297,7 @@ const SearchTrips = () => {
                   <BsCreditCardFill
                     className="center delete-icon"
                     id={data1.trip_id + ' ' + data1.trip_price}
+                    onClick={() => setModalShow(true)}
                     color="#0695e8"
                     size={45}
                   />

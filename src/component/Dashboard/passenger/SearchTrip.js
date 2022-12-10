@@ -25,10 +25,9 @@ const SearchTrips = () => {
     'input',
     'price',
   ])
-  const [show, setShow] = useState(true)
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const [modalShow, setModalShow] = useState(false)
+  const handleClose = () => setModalShow(false)
+  const handleShow = () => setModalShow(true)
 
   const imageURL = 'http://www.travelbro.top/'
   const baseURL = 'https://www.travelbro.top/api.php'
@@ -163,7 +162,7 @@ const SearchTrips = () => {
     <div className="SearchTrip">
       <>
         <Modal
-          show={show}
+          show={modalShow}
           onHide={handleClose}
           aria-labelledby="contained-modal-title-vcenter"
           centered

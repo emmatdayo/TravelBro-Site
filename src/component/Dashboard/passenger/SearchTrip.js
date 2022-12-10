@@ -25,7 +25,7 @@ const SearchTrips = () => {
     'input',
     'price',
   ])
-  const [modalShow, setModalShow] = useState('')
+  const [modalShow, setModalShow] = useState(true)
   const handleClose = () => setModalShow(false)
   const handleShow = () => setModalShow(true)
 

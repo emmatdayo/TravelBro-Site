@@ -136,6 +136,7 @@ const SearchTrips = () => {
   }
 
   const JoinTrip = (e) => {
+    e.preventDefault()
     const TargetId = e.currentTarget.id
     const IdArray = TargetId.split(' ')
     const id = IdArray[0]

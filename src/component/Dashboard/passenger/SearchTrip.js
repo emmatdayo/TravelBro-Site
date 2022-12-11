@@ -17,8 +17,9 @@ import Modal from 'react-bootstrap/Modal'
 const SearchTrips = () => {
   const [inputs, setInputs] = useState('')
   const [post, setPost] = useState([])
+  const [bookedData, setBookedData] = useState([])
   const [seatNumber, setSeatNumber] = useState(1)
-  const [statePrice, setStatePrice] = useState(1)
+  const [statePrice, setStatePrice] = useState([])
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
@@ -142,8 +143,8 @@ const SearchTrips = () => {
     const Tprice = IdArray[1]
     const TotalPrice1 = Tprice * seatNumber * 100
     const user = cookies.user
-    setStatePrice(TotalPrice1)
-    console.log(statePrice)
+    setBookedData(TotalPrice1)
+    console.log(bookedData)
 
     const datas = {
       request: 'trip_modal',

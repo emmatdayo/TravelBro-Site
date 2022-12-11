@@ -263,8 +263,8 @@ const SearchTrips = () => {
             <Button variant="secondary" onClick={JoinTrip}>
               Continue
             </Button>
-            <Button variant="secondary" onClick={handleClose}>
-              Continue
+            <Button variant="danger" onClick={handleClose}>
+              Close
             </Button>
           </Modal.Footer>
         </Modal>

@@ -305,7 +305,7 @@ const SearchTrips = () => {
                     className="center delete-icon"
                     id={data1.trip_id + ' ' + data1.trip_price}
                     onClick={() => {
-                      JoinTrip
+                      JoinTrip()
                       return <Paystack />
                     }}
                     color="#0695e8"

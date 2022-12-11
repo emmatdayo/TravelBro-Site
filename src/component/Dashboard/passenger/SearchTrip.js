@@ -222,7 +222,6 @@ const SearchTrips = () => {
                         <div className="point-div">{data1.departure_point}</div>
                       </td>
                       <td></td>
-                      <td className="price">&#8358; {data1.trip_price}</td>
                     </tr>
 
                     <tr className="middle-row">
@@ -233,7 +232,6 @@ const SearchTrips = () => {
                         <HiOutlineArrowNarrowDown size={45} />
                       </td>
                       <td>Price for {bookedPrice} seats</td>
-                      <td></td>
                     </tr>
 
                     <tr className="">
@@ -247,16 +245,6 @@ const SearchTrips = () => {
                       <td className="seats ">
                         <MdOutlinePersonOutline size={40} />
                         {data1.trip_seats}
-                      </td>
-                      <td className="button ">
-                        <BsCreditCardFill
-                          className="center delete-icon"
-                          id={data1.trip_id + ' ' + data1.trip_price}
-                          onClick={JoinTrip}
-                          color="#0695e8"
-                          size={45}
-                        />
-                        <div className="book-trip">Book Trip</div>
                       </td>
                     </tr>
                   </table>

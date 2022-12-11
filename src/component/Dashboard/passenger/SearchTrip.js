@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
-import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
+import {
+  HiOutlineArrowNarrowRight,
+  HiOutlineArrowNarrowDown,
+} from 'react-icons/hi'
 import { MdOutlinePersonOutline, MdDelete } from 'react-icons/md'
 import { BsCreditCardFill } from 'react-icons/bs'
 import { usePaystackPayment } from 'react-paystack'

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
-import { HiOutlineArrowNarrowDown } from 'react-icons/hi'
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 import { MdOutlinePersonOutline, MdDelete } from 'react-icons/md'
 import { BsCreditCardFill } from 'react-icons/bs'
 import { usePaystackPayment } from 'react-paystack'
@@ -222,24 +222,17 @@ const SearchTrips = () => {
 
                         <div className="point-div">{data1.departure_point}</div>
                       </td>
-                      <td></td>
-                      <td></td>
+                      <td className="arrow-icon ">
+                        <HiOutlineArrowNarrowRight size={45} />
+                      </td>
+                      <td className="pb-4 destination ">{data1.destination}</td>
                     </tr>
 
                     <tr className="middle-row">
-                      <td>
-                        <div className="d-info d-name">{data1.name}</div>
-                      </td>
-                      <td className="arrow-icon ">
-                        <HiOutlineArrowNarrowDown size={45} />
-                      </td>
+                      <td></td>
+                      <td className="arrow-icon "></td>
                       <td colSpan="2">
-                        <div className="modal-price">
-                          Price for {seatNumber} seat(s)
-                        </div>
-                        <div className="center modal-price">
-                          {bookedPrice / 100}
-                        </div>
+                        <div className="center modal-price"></div>
                       </td>
                     </tr>
 
@@ -250,9 +243,17 @@ const SearchTrips = () => {
                           src={imageURL + data1.profile_picture}
                         />
                       </td>
-                      <td className="pb-4 destination ">{data1.destination}</td>
-                      <td className="seats "></td>
-                      <td></td>
+                      <td className=" ">
+                        {' '}
+                        <div className="d-info d-name">{data1.name}</div>
+                      </td>
+                      <td className=" ">
+                        {' '}
+                        <div className="modal-price">
+                          Price for {seatNumber} seat(s)
+                        </div>
+                      </td>
+                      <td> {bookedPrice / 100}</td>
                     </tr>
                   </table>
                 )

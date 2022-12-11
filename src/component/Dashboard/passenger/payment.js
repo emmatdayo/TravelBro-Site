@@ -4,11 +4,14 @@ import { usePaystackPayment } from 'react-paystack'
 //import './App.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { Cookies } from 'react-cookie'
+
+const cookies = new Cookies()
 
 const config = {
   reference: new Date().getTime().toString(),
-  email: cookies.user,
-  amount: cookies.price,
+  email: cookies.get('user'),
+  amount: cookies.get('price'),
   publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
   //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
 }
@@ -31,12 +34,4 @@ const PaystackHookExample = () => {
   return initializePayment(onSuccess, onClose)
 }
 
-function Payment() {
-  return (
-    <div className="App">
-      <PaystackHookExample />
-    </div>
-  )
-}
-
-export default Payment
+export default PaystackHookExample

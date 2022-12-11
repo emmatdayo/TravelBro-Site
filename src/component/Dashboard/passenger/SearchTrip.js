@@ -129,7 +129,7 @@ const SearchTrips = () => {
     // initializePayment(onSuccess, onClose)
   }
   const Paystack = () => {
-    if (statePrice == 1) {
+    if (statePrice !== 1) {
       //return <PaystackHookExample Config={config} />
     }
   }
@@ -171,6 +171,7 @@ const SearchTrips = () => {
   return (
     <div className="SearchTrip">
       <>
+        <Paystack />
         <Modal
           show={modalShow}
           onHide={handleClose}
@@ -308,7 +309,7 @@ const SearchTrips = () => {
                     id={data1.trip_id + ' ' + data1.trip_price}
                     onClick={(e) => {
                       JoinTrip(e)
-                      return <Paystack />
+                      setStatePrice(2)
                     }}
                     color="#0695e8"
                     size={45}

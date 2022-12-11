@@ -169,14 +169,11 @@ const SearchTrips = () => {
 
   const JoinTrip = (e) => {
     //const testTotalPrice = TotalPrice1
-    setCookie('price', TotalPrice1, { path: '/' })
+    //setCookie('price', TotalPrice1, { path: '/' })
     //setStatePrice(testTotalPrice)
-
     //handleShow()
     //setModalShow(true)
-
     //Paystack()
-
     /*const TestAwait = async () => {
       setCookie('price', TotalPrice1, { path: '/' })
     }

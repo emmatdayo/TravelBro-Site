@@ -231,7 +231,7 @@ const SearchTrips = () => {
                       <td className="arrow-icon ">
                         <HiOutlineArrowNarrowDown size={45} />
                       </td>
-                      <td>Price for {bookedPrice} seats</td>
+                      <td colSpan="2">Price for {seatNumber} seat(s)</td>
                     </tr>
 
                     <tr className="">
@@ -242,10 +242,7 @@ const SearchTrips = () => {
                         />
                       </td>
                       <td className="pb-4 destination ">{data1.destination}</td>
-                      <td className="seats ">
-                        <MdOutlinePersonOutline size={40} />
-                        {data1.trip_seats}
-                      </td>
+                      <td className="seats ">{bookedPrice / 100}</td>
                     </tr>
                   </table>
                 )

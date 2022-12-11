@@ -19,7 +19,7 @@ const SearchTrips = () => {
   const [post, setPost] = useState([])
   const [bookedData, setBookedData] = useState([])
   const [seatNumber, setSeatNumber] = useState(1)
-  const [statePrice, setStatePrice] = useState([])
+  const [bookedPrice, setBookedPrice] = useState([])
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
@@ -129,11 +129,11 @@ const SearchTrips = () => {
   const Pstack = () => {
     // initializePayment(onSuccess, onClose)
   }
-  const Paystack = () => {
+  /*const Paystack = () => {
     if (statePrice !== 1) {
       // return <PaystackHookExample Config={config} />
     }
-  }
+  }*/
 
   const TripModal = (e) => {
     e.preventDefault()
@@ -143,7 +143,7 @@ const SearchTrips = () => {
     const Tprice = IdArray[1]
     const TotalPrice1 = Tprice * seatNumber * 100
     const user = cookies.user
-    setBookedData(TotalPrice1)
+    setBookedPrice(TotalPrice1)
     console.log(bookedData)
 
     const datas = {
@@ -158,24 +158,20 @@ const SearchTrips = () => {
     axios.post(baseURL, new_data).then((response) => {
       const search_data = response.data
       console.log(search_data)
+      setBookedData(search_data)
+      console.log(bookedData)
+      console.log(bookedPrice)
+      //console.log(testTotalPrice)
+      //console.log(cookies.price)
     })
     setModalShow(true)
   }
 
   const JoinTrip = (e) => {
-    e.preventDefault()
-    const TargetId = e.currentTarget.id
-    const IdArray = TargetId.split(' ')
-    const id = IdArray[0]
-    const Tprice = IdArray[1]
-    const TotalPrice1 = Tprice * seatNumber * 100
     const testTotalPrice = TotalPrice1
     setCookie('price', TotalPrice1, { path: '/' })
     //setStatePrice(testTotalPrice)
-    console.log(TotalPrice1)
-    console.log(statePrice)
-    console.log(testTotalPrice)
-    console.log(cookies.price)
+
     //handleShow()
     //setModalShow(true)
 
@@ -211,12 +207,12 @@ const SearchTrips = () => {
             <Modal.Title>Travelbro</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {post &&
-              post.map((data1, idx) => {
+            {bookedData &&
+              bookedData.map((data1, idx) => {
                 return (
                   <table
                     key={idx}
-                    className="table  modal-table-container center port-map mt-4"
+                    className="table border  modal-table-container center port-map mt-4"
                   >
                     <tr>
                       <td className="date-time ">
@@ -240,16 +236,7 @@ const SearchTrips = () => {
                       <td className="arrow-icon ">
                         <HiOutlineArrowNarrowDown size={45} />
                       </td>
-                      <td>
-                        <input
-                          type="number"
-                          className="text-box seat-numb"
-                          name="seat_number_booked"
-                          placeholder="1"
-                          value={seatNumber}
-                          onChange={(e) => setSeatNumber(e.target.value)}
-                        />
-                      </td>
+                      <td>{bookedData}</td>
                       <td></td>
                     </tr>
 

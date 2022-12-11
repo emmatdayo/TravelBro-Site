@@ -129,7 +129,9 @@ const SearchTrips = () => {
     // initializePayment(onSuccess, onClose)
   }
   const Paystack = () => {
-    return <PaystackHookExample Config={config} />
+    if (statePrice) {
+      return <PaystackHookExample Config={config} />
+    }
   }
   const JoinTrip = (e) => {
     e.preventDefault()

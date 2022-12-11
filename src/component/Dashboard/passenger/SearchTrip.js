@@ -236,7 +236,7 @@ const SearchTrips = () => {
                       <td className="arrow-icon ">
                         <HiOutlineArrowNarrowDown size={45} />
                       </td>
-                      <td>{bookedData}</td>
+                      <td>Price for {bookedPrice} seats</td>
                       <td></td>
                     </tr>
 

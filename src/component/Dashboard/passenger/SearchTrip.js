@@ -99,7 +99,7 @@ const SearchTrips = () => {
   const config = {
     reference: new Date().getTime().toString(),
     email: cookies.user,
-    amount: cookies.price,
+    amount: bookedPrice,
     publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
     //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
   }
@@ -131,9 +131,9 @@ const SearchTrips = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log('closed')
   }
-  //const initializePayment = usePaystackPayment(config)
+  const initializePayment = usePaystackPayment(config)
   const Pstack = () => {
-    // initializePayment(onSuccess, onClose)
+    initializePayment(onSuccess, onClose)
   }
   /*const Paystack = () => {
     if (statePrice !== 1) {

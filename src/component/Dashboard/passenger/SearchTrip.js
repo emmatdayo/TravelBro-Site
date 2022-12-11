@@ -212,7 +212,7 @@ const SearchTrips = () => {
                 return (
                   <table
                     key={idx}
-                    className="table border  modal-table-container center port-map mt-4"
+                    className="table  modal-table-container center port-map mt-4"
                   >
                     <tr>
                       <td className="date-time ">

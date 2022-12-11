@@ -129,9 +129,7 @@ const SearchTrips = () => {
     // initializePayment(onSuccess, onClose)
   }
   const Paystack = () => {
-    if (statePrice == 1) {
-      return <PaystackHookExample Config={config} />
-    }
+    return <PaystackHookExample Config={config} />
   }
   const JoinTrip = (e) => {
     e.preventDefault()
@@ -171,7 +169,6 @@ const SearchTrips = () => {
   return (
     <div className="SearchTrip">
       <>
-        <Paystack />
         <Modal
           show={modalShow}
           onHide={handleClose}
@@ -307,7 +304,10 @@ const SearchTrips = () => {
                   <BsCreditCardFill
                     className="center delete-icon"
                     id={data1.trip_id + ' ' + data1.trip_price}
-                    onClick={JoinTrip}
+                    onClick={() => {
+                      JoinTrip
+                      return <Paystack />
+                    }}
                     color="#0695e8"
                     size={45}
                   />

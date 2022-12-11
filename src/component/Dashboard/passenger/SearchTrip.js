@@ -135,7 +135,9 @@ const SearchTrips = () => {
   const Pstack = () => {
     initializePayment(onSuccess, onClose)
   }
-
+  const Paystack = () => {
+    return <PaystackHookExample />
+  }
   const JoinTrip = (e) => {
     e.preventDefault()
     const TargetId = e.currentTarget.id
@@ -152,8 +154,8 @@ const SearchTrips = () => {
     console.log(cookies.price)
     //handleShow()
     //setModalShow(true)
+    Paystack()
 
-    return <PaystackHookExample />
     /*const TestAwait = async () => {
       setCookie('price', TotalPrice1, { path: '/' })
     }
@@ -166,6 +168,7 @@ const SearchTrips = () => {
   return (
     <div className="SearchTrip">
       <>
+        <Paystack />
         <Modal
           show={modalShow}
           onHide={handleClose}

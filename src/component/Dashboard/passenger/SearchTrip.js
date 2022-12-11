@@ -241,7 +241,6 @@ const SearchTrips = () => {
                           {bookedPrice / 100}
                         </div>
                       </td>
-                      <td></td>
                     </tr>
 
                     <tr className="">

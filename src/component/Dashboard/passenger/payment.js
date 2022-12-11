@@ -29,8 +29,8 @@ const onClose = () => {
   console.log('closed')
 }
 
-const PaystackHookExample = () => {
-  const initializePayment = usePaystackPayment(config)
+const PaystackHookExample = ({ Config }) => {
+  const initializePayment = usePaystackPayment(Config)
   return initializePayment(onSuccess, onClose)
 }
 

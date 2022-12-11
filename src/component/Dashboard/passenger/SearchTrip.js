@@ -248,15 +248,15 @@ const SearchTrips = () => {
                       </td>
                       <td className=" ">
                         {' '}
-                        <div className="d-info d-name">{data1.name}</div>
+                        <div className="d-info">{data1.name}</div>
                       </td>
                       <td className=" ">
                         {' '}
-                        <div className="modal-price">
+                        <div className="modal-price d-info">
                           Price for {seatNumber} seat(s)
                         </div>
                       </td>
-                      <td> {bookedPrice / 100}</td>
+                      <td className="modal-price"> {bookedPrice / 100}</td>
                     </tr>
                   </table>
                 )

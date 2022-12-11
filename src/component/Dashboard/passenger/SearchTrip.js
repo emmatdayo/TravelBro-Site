@@ -211,8 +211,8 @@ const SearchTrips = () => {
             <Modal.Title>Travelbro</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {post &&
-              post.map((data1, idx) => {
+            {bookedData &&
+              bookedData.map((data1, idx) => {
                 return (
                   <table
                     key={idx}

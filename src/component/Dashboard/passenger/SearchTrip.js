@@ -207,7 +207,12 @@ const SearchTrips = () => {
           centered
         >
           <Modal.Header closeButton>
-            <Modal.Title>Travelbro</Modal.Title>
+            <Modal.Title>
+              <div className="Modal-title">
+                Thank you for choosing travelbro. Please note that your payment
+                is safe and you will get full refund if the car owner defaults.
+              </div>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {bookedData &&

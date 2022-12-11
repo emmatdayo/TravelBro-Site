@@ -168,7 +168,7 @@ const SearchTrips = () => {
   }
 
   const JoinTrip = (e) => {
-    const testTotalPrice = TotalPrice1
+    //const testTotalPrice = TotalPrice1
     setCookie('price', TotalPrice1, { path: '/' })
     //setStatePrice(testTotalPrice)
 
@@ -196,7 +196,6 @@ const SearchTrips = () => {
   return (
     <div className="SearchTrip">
       <>
-        <Paystack />
         <Modal
           show={modalShow}
           onHide={handleClose}

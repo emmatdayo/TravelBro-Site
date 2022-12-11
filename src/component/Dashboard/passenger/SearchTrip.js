@@ -216,7 +216,7 @@ const SearchTrips = () => {
                 return (
                   <table
                     key={idx}
-                    className="table  table-container1 center port-map mt-4"
+                    className="table  modal-table-container center port-map mt-4"
                   >
                     <tr>
                       <td className="date-time ">
@@ -269,7 +269,7 @@ const SearchTrips = () => {
                         <BsCreditCardFill
                           className="center delete-icon"
                           id={data1.trip_id + ' ' + data1.trip_price}
-                          onClick={TripModal}
+                          onClick={JoinTrip}
                           color="#0695e8"
                           size={45}
                         />

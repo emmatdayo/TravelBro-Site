@@ -132,7 +132,7 @@ const SearchTrips = () => {
     return <PaystackHookExample Config={config} />
   }
   const JoinTrip = (e) => {
-    e.preventDefault()
+    //e.preventDefault()
     const TargetId = e.currentTarget.id
     const IdArray = TargetId.split(' ')
     const id = IdArray[0]

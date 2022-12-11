@@ -80,8 +80,8 @@ const SearchTrips = () => {
 
     axios.post(baseURL, new_data).then((response) => {
       const search_data = response.data
-      const amounts = search_data[0].trip_price
       console.log(search_data)
+      //const amounts = search_data[0].trip_price
       setPost(search_data)
       console.log(post)
       //alert(post)
@@ -141,8 +141,23 @@ const SearchTrips = () => {
     const id = IdArray[0]
     const Tprice = IdArray[1]
     const TotalPrice1 = Tprice * seatNumber * 100
+    const user = cookies.user
     setStatePrice(TotalPrice1)
     console.log(statePrice)
+
+    const datas = {
+      request: 'trip_modal',
+      id: id,
+      user: user,
+    }
+
+    const new_data = JSON.stringify(datas)
+    //const new_data2 = JSON.parse(new_data)
+
+    axios.post(baseURL, new_data).then((response) => {
+      const search_data = response.data
+      console.log(search_data)
+    })
   }
 
   const JoinTrip = (e) => {

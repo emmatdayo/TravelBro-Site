@@ -2,11 +2,13 @@ import React from 'react'
 //import logo from './logo.svg'
 import { usePaystackPayment } from 'react-paystack'
 //import './App.css'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 const config = {
   reference: new Date().getTime().toString(),
-  email: 'adedayooke29@gmail.com',
-  amount: 20000,
+  email: cookies.user,
+  amount: cookies.price,
   publicKey: 'pk_test_64126f61df754329ea3017aa6288110785b7cf1d',
   //pk_live_09c77e40e978d48d71865e8a5efd59bd0e089ddb
 }
@@ -26,17 +28,7 @@ const onClose = () => {
 
 const PaystackHookExample = () => {
   const initializePayment = usePaystackPayment(config)
-  return (
-    <div>
-      <button
-        onClick={() => {
-          initializePayment(onSuccess, onClose)
-        }}
-      >
-        Paystack Hooks Implementation
-      </button>
-    </div>
-  )
+  return initializePayment(onSuccess, onClose)
 }
 
 function Payment() {

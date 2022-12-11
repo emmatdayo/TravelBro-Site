@@ -7,6 +7,7 @@ import { HiOutlineArrowNarrowDown } from 'react-icons/hi'
 import { MdOutlinePersonOutline, MdDelete } from 'react-icons/md'
 import { BsCreditCardFill } from 'react-icons/bs'
 import { usePaystackPayment } from 'react-paystack'
+import PaystackHookExample from './payment'
 
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
@@ -130,10 +131,13 @@ const SearchTrips = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log('closed')
   }
-
-  const Pstack = () => {}
+  const initializePayment = usePaystackPayment(config)
+  const Pstack = () => {
+    initializePayment(onSuccess, onClose)
+  }
 
   const JoinTrip = (e) => {
+    e.preventDefault()
     const TargetId = e.currentTarget.id
     const IdArray = TargetId.split(' ')
     const id = IdArray[0]
@@ -148,8 +152,8 @@ const SearchTrips = () => {
     console.log(cookies.price)
     //handleShow()
     //setModalShow(true)
-    const initializePayment = usePaystackPayment(config)
-    initializePayment(onSuccess, onClose)
+
+    return <PaystackHookExample />
     /*const TestAwait = async () => {
       setCookie('price', TotalPrice1, { path: '/' })
     }

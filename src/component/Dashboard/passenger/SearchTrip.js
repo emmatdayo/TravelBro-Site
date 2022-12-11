@@ -365,7 +365,7 @@ const SearchTrips = () => {
                   <HiOutlineArrowNarrowDown size={45} />
                 </td>
                 <td>
-                  <MdOutlineAirlineSeatReclineNormal size={35} />
+                  <MdOutlineAirlineSeatReclineNormal size={33} />
                   <input
                     type="number"
                     className="text-box seat-numb"

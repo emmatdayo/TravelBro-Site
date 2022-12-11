@@ -129,7 +129,7 @@ const SearchTrips = () => {
     // initializePayment(onSuccess, onClose)
   }
   const Paystack = () => {
-    if (statePrice) {
+    if (statePrice !== 1) {
       return <PaystackHookExample Config={config} />
     }
   }

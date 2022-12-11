@@ -130,7 +130,7 @@ const SearchTrips = () => {
   }
   const Paystack = () => {
     if (statePrice == 1) {
-      //return <PaystackHookExample Config={config} />
+      return <PaystackHookExample Config={config} />
     }
   }
   const JoinTrip = (e) => {

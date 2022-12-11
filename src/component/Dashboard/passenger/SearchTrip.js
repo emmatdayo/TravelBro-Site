@@ -7,7 +7,10 @@ import {
   HiOutlineArrowNarrowRight,
   HiOutlineArrowNarrowDown,
 } from 'react-icons/hi'
-import { MdOutlinePersonOutline, MdDelete } from 'react-icons/md'
+import {
+  MdOutlinePersonOutline,
+  MdOutlineAirlineSeatReclineNormal,
+} from 'react-icons/md'
 import { BsCreditCardFill } from 'react-icons/bs'
 import { usePaystackPayment } from 'react-paystack'
 import PaystackHookExample from './payment'
@@ -362,6 +365,7 @@ const SearchTrips = () => {
                   <HiOutlineArrowNarrowDown size={45} />
                 </td>
                 <td>
+                  <MdOutlineAirlineSeatReclineNormal />
                   <input
                     type="number"
                     className="text-box seat-numb"

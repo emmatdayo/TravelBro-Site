@@ -159,6 +159,7 @@ const SearchTrips = () => {
       const search_data = response.data
       console.log(search_data)
     })
+    setModalShow(true)
   }
 
   const JoinTrip = (e) => {
@@ -210,7 +211,74 @@ const SearchTrips = () => {
             <Modal.Title>Travelbro</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div>{cookies.price}</div>
+            {post &&
+              post.map((data1, idx) => {
+                return (
+                  <table
+                    key={idx}
+                    className="table  table-container1 center port-map mt-4"
+                  >
+                    <tr>
+                      <td className="date-time ">
+                        {data1.date}
+                        <br />
+                        {data1.time}
+                      </td>
+                      <td className="departure ">
+                        <div className="departure-div">{data1.departure}</div>
+
+                        <div className="point-div">{data1.departure_point}</div>
+                      </td>
+                      <td></td>
+                      <td className="price">&#8358; {data1.trip_price}</td>
+                    </tr>
+
+                    <tr className="middle-row">
+                      <td>
+                        <div className="d-info d-name">{data1.name}</div>
+                      </td>
+                      <td className="arrow-icon ">
+                        <HiOutlineArrowNarrowDown size={45} />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          className="text-box seat-numb"
+                          name="seat_number_booked"
+                          placeholder="1"
+                          value={seatNumber}
+                          onChange={(e) => setSeatNumber(e.target.value)}
+                        />
+                      </td>
+                      <td></td>
+                    </tr>
+
+                    <tr className="">
+                      <td className="dp">
+                        <img
+                          className="dp-image"
+                          src={imageURL + data1.profile_picture}
+                        />
+                      </td>
+                      <td className="pb-4 destination ">{data1.destination}</td>
+                      <td className="seats ">
+                        <MdOutlinePersonOutline size={40} />
+                        {data1.trip_seats}
+                      </td>
+                      <td className="button ">
+                        <BsCreditCardFill
+                          className="center delete-icon"
+                          id={data1.trip_id + ' ' + data1.trip_price}
+                          onClick={TripModal}
+                          color="#0695e8"
+                          size={45}
+                        />
+                        <div className="book-trip">Book Trip</div>
+                      </td>
+                    </tr>
+                  </table>
+                )
+              })}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

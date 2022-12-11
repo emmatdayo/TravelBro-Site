@@ -256,7 +256,9 @@ const SearchTrips = () => {
                           Price for {seatNumber} seat(s)
                         </div>
                       </td>
-                      <td className="modal-price"> {bookedPrice / 100}</td>
+                      <td className="modal-price">
+                        &#8358; {bookedPrice / 100}
+                      </td>
                     </tr>
                   </table>
                 )

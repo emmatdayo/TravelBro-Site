@@ -223,6 +223,7 @@ const SearchTrips = () => {
                         <div className="point-div">{data1.departure_point}</div>
                       </td>
                       <td></td>
+                      <td></td>
                     </tr>
 
                     <tr className="middle-row">
@@ -232,7 +233,15 @@ const SearchTrips = () => {
                       <td className="arrow-icon ">
                         <HiOutlineArrowNarrowDown size={45} />
                       </td>
-                      <td colSpan="2">Price for {seatNumber} seat(s)</td>
+                      <td colSpan="2">
+                        <div className="modal-price">
+                          Price for {seatNumber} seat(s)
+                        </div>
+                        <div className="center modal-price">
+                          {bookedPrice / 100}
+                        </div>
+                      </td>
+                      <td></td>
                     </tr>
 
                     <tr className="">
@@ -243,7 +252,8 @@ const SearchTrips = () => {
                         />
                       </td>
                       <td className="pb-4 destination ">{data1.destination}</td>
-                      <td className="seats ">{bookedPrice / 100}</td>
+                      <td className="seats "></td>
+                      <td></td>
                     </tr>
                   </table>
                 )

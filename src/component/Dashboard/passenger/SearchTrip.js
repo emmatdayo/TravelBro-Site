@@ -130,9 +130,21 @@ const SearchTrips = () => {
   }
   const Paystack = () => {
     if (statePrice !== 1) {
-      return <PaystackHookExample Config={config} />
+      // return <PaystackHookExample Config={config} />
     }
   }
+
+  const TripModal = (e) => {
+    e.preventDefault()
+    const TargetId = e.currentTarget.id
+    const IdArray = TargetId.split(' ')
+    const id = IdArray[0]
+    const Tprice = IdArray[1]
+    const TotalPrice1 = Tprice * seatNumber * 100
+    setStatePrice(TotalPrice1)
+    console.log(statePrice)
+  }
+
   const JoinTrip = (e) => {
     e.preventDefault()
     const TargetId = e.currentTarget.id
@@ -150,7 +162,7 @@ const SearchTrips = () => {
     //handleShow()
     //setModalShow(true)
 
-    Paystack()
+    //Paystack()
 
     /*const TestAwait = async () => {
       setCookie('price', TotalPrice1, { path: '/' })

@@ -173,7 +173,8 @@ const SearchTrips = () => {
     setModalShow(true)
   }
 
-  const JoinTrip = (e) => {
+  const JoinTrip = () => {
+    Pstack()
     //const testTotalPrice = TotalPrice1
     //setCookie('price', TotalPrice1, { path: '/' })
     //setStatePrice(testTotalPrice)
@@ -250,6 +251,9 @@ const SearchTrips = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={JoinTrip}>
+              Continue
+            </Button>
+            <Button variant="secondary" onClick={handleClose}>
               Continue
             </Button>
           </Modal.Footer>

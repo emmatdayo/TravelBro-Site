@@ -95,6 +95,7 @@ const Signup = () => {
               <div className="header-container">
                 <h1 className="signup-title">Sign up with us</h1>
               </div>
+
               <form onSubmit={submit_handler}>
                 <div className="body-container center">
                   <div className="form-input center">
@@ -172,6 +173,7 @@ const Signup = () => {
                       value="Submit"
                     />
                   </div>
+
                   {/*<div className="fb-div center">
                   <div className="fb-text">Continue with Facebook</div>
                   <div className="fb-arrow">
@@ -179,7 +181,8 @@ const Signup = () => {
                     <BsArrowRightShort size={30} />
                   </div>
                 </div> 
-  */}
+                 */}
+
                   <div className="signin-link center">
                     Already a member{' '}
                     <span

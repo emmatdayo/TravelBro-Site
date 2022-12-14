@@ -67,7 +67,13 @@ const Home = () => {
     console.log(inputs)
     setCookie('input', inputs, { path: '/' })
 
-    window.location.href = '/dashboard'
+    const user = cookies.user
+    console.log(user)
+    if (user == '' || user == undefined || user == null) {
+      window.location.href = '/signin'
+    } else {
+      window.location.href = '/dashboard'
+    }
   }
 
   return (

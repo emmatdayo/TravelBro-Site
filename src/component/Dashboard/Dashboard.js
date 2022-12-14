@@ -59,7 +59,7 @@ const Dashboard = () => {
       setDp(UserDp)
       //alert(Dp)
     }
-  }, [cookies])
+  }, [])
   const CompleteSign = () => {
     if (CurrentPage.PageLoad == Driver && cookies.status == 'Passenger') {
       return <CompleteSignup />

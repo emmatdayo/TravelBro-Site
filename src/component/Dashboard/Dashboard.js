@@ -49,9 +49,9 @@ const Dashboard = () => {
 
     const user = cookies.user
     console.log(user)
-    /*  if (user == '' || user == undefined || user == null) {
+    if (user == '' || user == undefined || user == null) {
       window.location.href = '/signin'
-    }*/
+    }
     const UserData = cookies.UserInfo
     const UserDp = cookies.UserDp
     if (UserData !== undefined || UserData !== '') {
@@ -59,7 +59,7 @@ const Dashboard = () => {
       setDp(UserDp)
       //alert(Dp)
     }
-  }, [])
+  }, [cookies])
   const CompleteSign = () => {
     if (CurrentPage.PageLoad == Driver && cookies.status == 'Passenger') {
       return <CompleteSignup />

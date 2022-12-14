@@ -48,9 +48,10 @@ const Dashboard = () => {
     //alert(cookies.status)
 
     const user = cookies.user
-    if (user == '' || user == undefined || user == null) {
+    console.log(user)
+    /*  if (user == '' || user == undefined || user == null) {
       window.location.href = '/signin'
-    }
+    }*/
     const UserData = cookies.UserInfo
     const UserDp = cookies.UserDp
     if (UserData !== undefined || UserData !== '') {

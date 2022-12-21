@@ -28,6 +28,7 @@ const Dashboard = () => {
     'page_to_load',
     'UserInfo',
     'UserDp',
+    'ReferralCode',
   ])
   const [CurrentPage, setCurrentPage] = useState({
     PageLoad: cookies.page_to_load,
@@ -78,6 +79,7 @@ const Dashboard = () => {
     ).toString()
 
     setEncrptedData(ReferralCode)
+    setCookie('ReferralCode', ReferralCode, { path: '/' })
     console.log(ReferralCode)
     console.log(encrptedData)
   }

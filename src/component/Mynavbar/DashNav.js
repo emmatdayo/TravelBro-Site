@@ -33,6 +33,7 @@ const Dashnavbar = () => {
   return (
     <>
       <Modal
+        size="lg"
         show={modalShow}
         onHide={ModalClose}
         aria-labelledby="contained-modal-title-vcenter"

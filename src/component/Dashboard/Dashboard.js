@@ -38,7 +38,10 @@ const Dashboard = () => {
     PageLoad: cookies.page_to_load,
   })
   const ModalClose = () => setModalshow(false)
-  const ModalShow = () => setModalshow(true)
+  const ModalShow = () => {
+    encryptData()
+    setModalshow(true)
+  }
 
   const user = cookies.user
   useEffect(() => {
@@ -88,7 +91,6 @@ const Dashboard = () => {
     console.log(ReferralCode)
     console.log(encrptedData)
   }
-  encryptData()
 
   const Present = () => {
     return <CurrentPage.PageLoad />

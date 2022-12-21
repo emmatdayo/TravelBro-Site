@@ -56,12 +56,13 @@ const Users = () => {
     },
     {
       name: 'Referal Code',
-      selector: (row) =>
+      selector: (row) => {
         JSON.parse(
           CryptoJS.AES.decrypt(row.referal, secretPass).toString(
             CryptoJS.enc.Utf8
           )
-        ),
+        )
+      },
       sortable: true,
     },
     {

@@ -35,11 +35,6 @@ const Users = () => {
   )
   post.map((data) => console.log(data.referal))
   console.log(post.referal)
-  const decryptData = () => {
-    //const bytes = CryptoJS.AES.decrypt(post.referal, secretPass)
-    //const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
-    //return data
-  }
   const columns = [
     {
       name: 'User ID',
@@ -145,6 +140,11 @@ const Users = () => {
     })
   }
 
+  const decryptData = () => {
+    const bytes = CryptoJS.AES.decrypt(post.referal, secretPass)
+    const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+    return data
+  }
   return (
     <div className="admin-container">
       <div className="TableContainer">

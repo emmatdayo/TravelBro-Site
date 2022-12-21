@@ -12,6 +12,7 @@ import CompleteSignup from './driver/Modal'
 import Dashnavbar from '../Mynavbar/DashNav'
 import Logo from '../../images/travelbrowhite2.png'
 import CryptoJS from 'crypto-js'
+import Modal from 'react-bootstrap/Modal'
 
 const baseURL = 'https://www.travelbro.top/api.php'
 const imageURL = 'http://www.travelbro.top/'
@@ -22,6 +23,7 @@ const Dashboard = () => {
   const [post, setPost] = useState('')
   const [Dp, setDp] = useState('')
   const [encrptedData, setEncrptedData] = useState('')
+
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
@@ -33,6 +35,8 @@ const Dashboard = () => {
   const [CurrentPage, setCurrentPage] = useState({
     PageLoad: cookies.page_to_load,
   })
+  const ModalClose = () => setModalshow(false)
+  const ModalShow = () => setModalshow(true)
 
   const user = cookies.user
   useEffect(() => {
@@ -107,56 +111,83 @@ const Dashboard = () => {
     removeCookie('user', { path: '/' })
   }
   return (
-    <div className="my-container1 dashboard-section">
-      <div className="flex-container">
-        <div className="menu-container border-outline-danger">
-          <div className="profile-pic-div center">
-            <div className="profile-icon profile-pic icon">
-              <img
-                src={imageURL + Dp}
-                alt={<CgProfile size={90} />}
-                className="profile-pic"
-              />
-            </div>
-            <div className="">{post.name}</div>
-          </div>
-          <div className="menu-div">
-            <div className="passenger-div" id="Passenger" onClick={pageLoader}>
-              <div className="passenger-icon icon">
-                <IoIosPeople size={30} />
+    <>
+      <Modal
+        show={modalShow}
+        onHide={ModalClose}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>
+            <div className="Modaltitle">Referral Code</div>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{cookies.ReferralCode}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={ModalClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <div className="my-container1 dashboard-section">
+        <div className="flex-container">
+          <div className="menu-container border-outline-danger">
+            <div className="profile-pic-div center">
+              <div className="profile-icon profile-pic icon">
+                <img
+                  src={imageURL + Dp}
+                  alt={<CgProfile size={90} />}
+                  className="profile-pic"
+                />
               </div>
-              <div className="passenger-text">Passenger</div>{' '}
-            </div>
-            <div className="driver-div" id="Driver" onClick={pageLoader}>
-              <div className="driver-icon icon">
-                <FaCarSide size={30} />
-              </div>
-              <div className="driver-text">Driver</div>
-            </div>
-          </div>
-          <div className="logout-div" onClick={LogOut}>
-            <div className="logout-icon icon">
-              <FaPowerOff size={20} />
-            </div>
-            Log Out
-          </div>
-        </div>
-        <div className="display-container ">
-          <div className="row bg-dark ">
-            <div className="col-10">
-              <div align="left" className="dash-logo-div">
-                <img src={Logo} className="dash-logo" />
+              <div className="">{post.name}</div>
+              <div className="" onClick={ModalShow}>
+                Referral Code
               </div>
             </div>
-            <div className="col-2 nav-icon-div center pl-2">
-              <Dashnavbar />
+            <div className="menu-div">
+              <div
+                className="passenger-div"
+                id="Passenger"
+                onClick={pageLoader}
+              >
+                <div className="passenger-icon icon">
+                  <IoIosPeople size={30} />
+                </div>
+                <div className="passenger-text">Passenger</div>{' '}
+              </div>
+              <div className="driver-div" id="Driver" onClick={pageLoader}>
+                <div className="driver-icon icon">
+                  <FaCarSide size={30} />
+                </div>
+                <div className="driver-text">Driver</div>
+              </div>
+            </div>
+            <div className="logout-div" onClick={LogOut}>
+              <div className="logout-icon icon">
+                <FaPowerOff size={20} />
+              </div>
+              Log Out
             </div>
           </div>
-          <CompleteSign />
-          <Present />
+          <div className="display-container ">
+            <div className="row bg-dark ">
+              <div className="col-10">
+                <div align="left" className="dash-logo-div">
+                  <img src={Logo} className="dash-logo" />
+                </div>
+              </div>
+              <div className="col-2 nav-icon-div center pl-2">
+                <Dashnavbar />
+              </div>
+            </div>
+            <CompleteSign />
+            <Present />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

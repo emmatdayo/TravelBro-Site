@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import axios from 'axios'
 import DataTable from 'react-data-table-component'
+import CryptoJS from 'crypto-js'
 
 const Users = () => {
   const [post, setPost] = useState([])
@@ -14,6 +15,8 @@ const Users = () => {
 
   const [filterText, setFilterText] = useState('')
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false)
+  const secretPass = 'secretPass@1234'
+
   const filteredItems = post.filter(
     (item) =>
       (item.name &&
@@ -25,8 +28,10 @@ const Users = () => {
       (item.user_id &&
         item.user_id.toLowerCase().includes(filterText.toLowerCase())) ||
       (item.tel && item.tel.toLowerCase().includes(filterText.toLowerCase())) ||
-      (item.referal &&
-        item.referal.toLowerCase().includes(filterText.toLowerCase()))
+      (CryptoJS.AES.decrypt(item.referal, secretPass) &&
+        CryptoJS.AES.decrypt(item.referal, secretPass)
+          .toLowerCase()
+          .includes(filterText.toLowerCase()))
   )
   const columns = [
     {

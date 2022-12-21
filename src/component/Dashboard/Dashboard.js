@@ -70,8 +70,8 @@ const Dashboard = () => {
       setDp(UserDp)
       //alert(Dp)
     }
-    encryptData()
   }, [cookies])
+  encryptData()
   const CompleteSign = () => {
     if (CurrentPage.PageLoad == Driver && cookies.status == 'Passenger') {
       return <CompleteSignup />

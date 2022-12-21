@@ -33,6 +33,7 @@ const Users = () => {
           .toLowerCase()
           .includes(filterText.toLowerCase()))
   )
+  post.map((data) => console.log(data.referal))
   console.log(post.referal)
   const decryptData = () => {
     //const bytes = CryptoJS.AES.decrypt(post.referal, secretPass)

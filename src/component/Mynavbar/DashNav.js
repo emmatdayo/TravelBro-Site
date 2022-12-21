@@ -16,11 +16,11 @@ const Dashnavbar = () => {
   const [show, setShow] = useState(false)
   const [modalShow, setModalshow] = useState(false)
 
-  const handleClose = () => setModalshow(false)
-  const handleShow = () => setModalshow(true)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
-  const ModalClose = () => setShow(false)
-  const ModalShow = () => setShow(true)
+  const ModalClose = () => setModalshow(false)
+  const ModalShow = () => setModalshow(true)
 
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',

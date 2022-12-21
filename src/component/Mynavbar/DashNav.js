@@ -90,7 +90,7 @@ const Dashnavbar = () => {
             <Nav.Link
               as={Link}
               onClick={() => {
-                setCookie('page_to_load', 'Driver', { path: '/' })
+                ModalShow()
               }}
             >
               Sign Up

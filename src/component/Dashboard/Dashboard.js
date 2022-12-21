@@ -71,7 +71,6 @@ const Dashboard = () => {
       //alert(Dp)
     }
   }, [cookies])
-  encryptData()
   const CompleteSign = () => {
     if (CurrentPage.PageLoad == Driver && cookies.status == 'Passenger') {
       return <CompleteSignup />
@@ -89,6 +88,7 @@ const Dashboard = () => {
     console.log(ReferralCode)
     console.log(encrptedData)
   }
+  encryptData()
 
   const Present = () => {
     return <CurrentPage.PageLoad />
@@ -144,7 +144,7 @@ const Dashboard = () => {
                 />
               </div>
               <div className="">{post.name}</div>
-              <div className="" onClick={ModalShow}>
+              <div className="referral-code" onClick={ModalShow}>
                 Referral Code
               </div>
             </div>

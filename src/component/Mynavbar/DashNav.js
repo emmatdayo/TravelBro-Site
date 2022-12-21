@@ -93,7 +93,7 @@ const Dashnavbar = () => {
                 ModalShow()
               }}
             >
-              Sign Up
+              Referral Code
             </Nav.Link>
           </Nav>
         </Offcanvas.Body>

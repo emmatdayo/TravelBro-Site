@@ -35,9 +35,9 @@ const Users = () => {
   )
   alert(post)
   const decryptData = () => {
-    const bytes = CryptoJS.AES.decrypt(post.referal, secretPass)
-    const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
-    return data
+    //const bytes = CryptoJS.AES.decrypt(post.referal, secretPass)
+    //const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+    //return data
   }
   const columns = [
     {

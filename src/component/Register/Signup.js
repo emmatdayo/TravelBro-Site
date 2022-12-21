@@ -57,7 +57,7 @@ const Signup = () => {
       console.log(status)
 
       if (status == 'signed_up') {
-        //window.location.href = '/dashboard'
+        window.location.href = '/dashboard'
         setCookie('user', inputs.email, { path: '/' })
         setCookie('page_to_load', 'Passenger', { path: '/' })
         setCookie('status', 'Passenger', { path: '/' })

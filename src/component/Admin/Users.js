@@ -57,11 +57,9 @@ const Users = () => {
     {
       name: 'Referal Code',
       selector: (row) => {
-        JSON.parse(
-          CryptoJS.AES.decrypt(row.referal, secretPass).toString(
-            CryptoJS.enc.Utf8
-          )
-        )
+        const bytes = CryptoJS.AES.decrypt(row.referal, secretPass)
+
+        JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
       },
       sortable: true,
     },

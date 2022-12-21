@@ -11,13 +11,17 @@ import { useCookies } from 'react-cookie'
 import CompleteSignup from './driver/Modal'
 import Dashnavbar from '../Mynavbar/DashNav'
 import Logo from '../../images/travelbrowhite2.png'
+import CryptoJS from 'crypto-js'
 
 const baseURL = 'https://www.travelbro.top/api.php'
 const imageURL = 'http://www.travelbro.top/'
 
+const secretPass = 'secretPass@1234'
+
 const Dashboard = () => {
   const [post, setPost] = useState('')
   const [Dp, setDp] = useState('')
+  const [encrptedData, setEncrptedData] = useState('')
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
@@ -29,6 +33,7 @@ const Dashboard = () => {
     PageLoad: cookies.page_to_load,
   })
 
+  const user = cookies.user
   useEffect(() => {
     let currentState = cookies.page_to_load
     //alert(currentState)
@@ -47,7 +52,6 @@ const Dashboard = () => {
     CompleteSign()
     //alert(cookies.status)
 
-    const user = cookies.user
     console.log(user)
     if (user == '' || user == undefined || user == null) {
       window.location.href = '/signin'
@@ -59,11 +63,23 @@ const Dashboard = () => {
       setDp(UserDp)
       //alert(Dp)
     }
+    encryptData()
   }, [cookies])
   const CompleteSign = () => {
     if (CurrentPage.PageLoad == Driver && cookies.status == 'Passenger') {
       return <CompleteSignup />
     }
+  }
+
+  const encryptData = () => {
+    const ReferralCode = CryptoJS.AES.encrypt(
+      JSON.stringify(user),
+      secretPass
+    ).toString()
+
+    setEncrptedData(ReferralCode)
+    console.log(ReferralCode)
+    console.log(encrptedData)
   }
 
   const Present = () => {

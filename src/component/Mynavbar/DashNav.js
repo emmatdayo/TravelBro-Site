@@ -7,6 +7,7 @@ import { FaBars } from 'react-icons/fa'
 import navbarimg from '../../images/travelbro-blue-nav.png'
 import { MdOutlinePersonOutline } from 'react-icons/md'
 import { useCookies } from 'react-cookie'
+import Modal from 'react-bootstrap/Modal'
 
 import './Mynavbar.scss'
 import { Button } from 'react-bootstrap'

@@ -127,7 +127,9 @@ const Dashboard = () => {
             <div className="Modaltitle">Referral Code</div>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>{cookies.ReferralCode}</Modal.Body>
+        <Modal.Body>
+          <div className="referral-div">{cookies.ReferralCode}</div>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={ModalClose}>
             Close
@@ -147,7 +149,7 @@ const Dashboard = () => {
               </div>
               <div className="">{post.name}</div>
               <div className="referral-code" onClick={ModalShow}>
-                Referral Code
+                <u>Referral Code</u>
               </div>
             </div>
             <div className="menu-div">

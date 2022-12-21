@@ -13,6 +13,7 @@ import Dashnavbar from '../Mynavbar/DashNav'
 import Logo from '../../images/travelbrowhite2.png'
 import CryptoJS from 'crypto-js'
 import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 const baseURL = 'https://www.travelbro.top/api.php'
 const imageURL = 'http://www.travelbro.top/'
@@ -23,6 +24,7 @@ const Dashboard = () => {
   const [post, setPost] = useState('')
   const [Dp, setDp] = useState('')
   const [encrptedData, setEncrptedData] = useState('')
+  const [modalShow, setModalshow] = useState(false)
 
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',

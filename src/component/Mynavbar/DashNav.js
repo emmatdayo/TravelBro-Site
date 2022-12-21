@@ -13,18 +13,42 @@ import { Button } from 'react-bootstrap'
 
 const Dashnavbar = () => {
   const [show, setShow] = useState(false)
+  const [modalShow, setModalshow] = useState(false)
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleClose = () => setModalshow(false)
+  const handleShow = () => setModalshow(true)
+
+  const ModalClose = () => setShow(false)
+  const ModalShow = () => setShow(true)
 
   const [cookies, setCookie, removeCookie] = useCookies([
     'user',
     'status',
     'page_to_load',
     'input',
+    'input',
+    'ReferralCode',
   ])
   return (
     <>
+      <Modal
+        show={modalShow}
+        onHide={ModalClose}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>
+            <div className="Modaltitle">Referral Code</div>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{cookies.ReferralCode}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={ModalClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <FaBars
         className=" nav-icon mb-2 mt-2"
         size={40}
@@ -56,6 +80,14 @@ const Dashnavbar = () => {
             <Nav.Link
               as={Link}
               to={'/signup '}
+              onClick={() => {
+                setCookie('page_to_load', 'Driver', { path: '/' })
+              }}
+            >
+              Sign Up
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
               onClick={() => {
                 setCookie('page_to_load', 'Driver', { path: '/' })
               }}

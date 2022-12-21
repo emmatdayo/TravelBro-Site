@@ -112,8 +112,9 @@
   }
 }
 .referral-div {
-  border: 1px solid red;
-  width: 80%;
+  //border: 1px solid red;
+  //width: 80%;
+  box-sizing: border-box;
 }
 .flex-container {
   display: flex;

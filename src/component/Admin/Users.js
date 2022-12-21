@@ -33,6 +33,11 @@ const Users = () => {
           .toLowerCase()
           .includes(filterText.toLowerCase()))
   )
+  const decryptData = () => {
+    const bytes = CryptoJS.AES.decrypt(post.referal, secretPass)
+    const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+    return data
+  }
   const columns = [
     {
       name: 'User ID',
@@ -56,11 +61,7 @@ const Users = () => {
     },
     {
       name: 'Referal Code',
-      selector: (row) => {
-        const bytes = CryptoJS.AES.decrypt(row.referal, secretPass)
-
-        JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
-      },
+      selector: (row) => decryptData(),
       sortable: true,
     },
     {

@@ -17,13 +17,16 @@ const TripPayment = () => {
     'UserDp',
     'ReferralCode',
   ])
+
   return (
     <div className="payment-div">
       <div className="row">
         <div className="col-8">Driver Wallet</div>
         <div className="col-4">{totalPrice}</div>
       </div>
-      <button className="btn btn-success">Request Payment</button>
+      <button className="btn btn-success payment-button">
+        Request Payment
+      </button>
     </div>
   )
 }

@@ -142,8 +142,14 @@ const Users = () => {
 
   const decryptData = (decryptText) => {
     const bytes = CryptoJS.AES.decrypt(decryptText, secretPass)
-    const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
-    return data
+    console.log(bytes)
+    try {
+      const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+      console.log(data)
+      return data
+    } catch (err) {
+      console.log('error', err)
+    }
   }
   return (
     <div className="admin-container">

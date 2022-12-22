@@ -22,7 +22,22 @@ const TripPayment = () => {
     Price()
   }, [totalPrice])
 
-  const Price = () => {}
+  const Price = () => {
+    const user = cookies.user
+    //alert(user)
+    const data = {
+      request: 'trips_payment',
+      user: user,
+    }
+    const new_data = JSON.stringify(data)
+
+    axios.post(baseURL, new_data).then((response) => {
+      const trips_payment = response.data
+      //alert(trip_request)
+      console.log(trips_payment)
+      setTotalPrice(trips_payment)
+    })
+  }
 
   return (
     <div className="payment-div center">

@@ -18,13 +18,19 @@ const TripPayment = () => {
     'ReferralCode',
   ])
 
+  useEffect(() => {
+    Price()
+  }, [totalPrice])
+
+  const Price = () => {}
+
   return (
     <div className="payment-div center">
       <div className="row">
         <div className="col-8">Driver Wallet</div>
         <div className="col-4">{totalPrice}</div>
       </div>
-      <button className="btn btn-success payment-button">
+      <button className="btn btn-primary payment-button">
         Request Payment
       </button>
     </div>

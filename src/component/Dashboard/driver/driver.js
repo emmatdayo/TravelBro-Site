@@ -6,6 +6,7 @@ import DriverTrips from './DriverTrips'
 import CreateTrip from './CreateTrip'
 import TripRequest from './TripRequest'
 import RegVehicle from './RegVehicle'
+import TripPayment from './TripPayment'
 import { useCookies } from 'react-cookie'
 
 const Driver = () => {
@@ -29,6 +30,8 @@ const Driver = () => {
       setCurrentSection({ SectionLoad: TripRequest })
     } else if (currentState == 'RegVehicle') {
       setCurrentSection({ SectionLoad: RegVehicle })
+    } else if (currentState == 'TripPayment') {
+      setCurrentSection({ SectionLoad: TripPayment })
     }
   }, [cookies])
   const PresentSection = (event) => {
@@ -47,6 +50,8 @@ const Driver = () => {
       setCurrentSection({ SectionLoad: TripRequest })
     } else if (section == 'RegVehicle') {
       setCurrentSection({ SectionLoad: RegVehicle })
+    } else if (section == 'TripPayment') {
+      setCurrentSection({ SectionLoad: TripPayment })
     }
 
     //console.log(CurrentSection.SectionLoad)
@@ -110,6 +115,19 @@ const Driver = () => {
               onClick={SectionLoader}
             >
               Trip Request
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class={
+                CurrentSection.SectionLoad == TripPayment
+                  ? 'nav-link active'
+                  : 'nav-link'
+              }
+              id="TripPayment"
+              onClick={SectionLoader}
+            >
+              Trip Payment
             </button>
           </li>
         </ul>

@@ -40,7 +40,7 @@ const TripPayment = () => {
   }
 
   return (
-    <div className="payment-div center">
+    <div className="payment-div center border">
       <div className="row">
         <div className="col-8">Driver Wallet</div>
         <div className="col-4">{totalPrice}</div>

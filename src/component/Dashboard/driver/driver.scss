@@ -1,3 +1,16 @@
+.payment-div {
+  width: 70%;
+  .payment-button {
+    //border: 1px solid silver;
+    background-color: #4f52ff;
+    background: linear-gradient(to right, #4f52ff, #7491f9);
+    border-radius: 0;
+    height: 45px;
+    color: white;
+    font-weight: 500;
+    width: 100%;
+  }
+}
 .image-div2 {
   height: 150px;
   margin-left: 90px;

@@ -148,7 +148,7 @@ const Users = () => {
       console.log(data)
       return data
     } catch (err) {
-      console.log('error', err)
+      //console.log('error', err)
     }
   }
   return (

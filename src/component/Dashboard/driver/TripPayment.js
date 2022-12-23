@@ -40,11 +40,11 @@ const TripPayment = () => {
   }
 
   return (
-    <div className="payment-div center border">
-      <div className="row border mb-3">
-        <div className="col-4">Driver Wallet</div>
-        <div className="col-4"></div>
-        <div className="col-4">{totalPrice}</div>
+    <div className="payment-div center">
+      <div className="row mb-3">
+        <div className="col-4 border">Driver Wallet</div>
+        <div className="col-4 border"></div>
+        <div className="col-4 border">{totalPrice}</div>
       </div>
       <button className="btn btn-primary payment-button">
         Request Payment

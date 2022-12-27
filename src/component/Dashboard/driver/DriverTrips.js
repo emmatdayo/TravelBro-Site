@@ -11,6 +11,7 @@ import { BsFillPersonLinesFill } from 'react-icons/bs'
 const DriverTrips = () => {
   const [post, setPost] = useState([])
   const [cancelTrip, setCancelTrip] = useState([])
+  const [startTrip, setStartTrip] = useState([])
   const [passenger, setPassenger] = useState([])
   const [ViewPassenger, setViewPassenger] = useState(false)
   const [cookies, setCookie] = useCookies(['user'])
@@ -19,7 +20,7 @@ const DriverTrips = () => {
   const baseURL = 'https://www.travelbro.top/api.php'
   useEffect(() => {
     ViewStuff()
-  }, [cancelTrip])
+  }, [cancelTrip, startTrip])
   const ViewStuff = () => {
     const user = cookies.user
     //alert(user)
@@ -55,6 +56,27 @@ const DriverTrips = () => {
       //alert(cancelTrip)
     })
   }
+
+  const StartTrip = (e) => {
+    const id = e.target.id
+    const user = cookies.user
+    //alert(id)
+
+    const datas = {
+      request: 'start_trip',
+      id: id,
+      user: user,
+    }
+    const new_data = JSON.stringify(datas)
+    //const new_data2 = JSON.parse(new_data)
+
+    axios.post(baseURL, new_data).then((response) => {
+      const start_trip = response.data
+      setStartTrip(start_trip)
+      //alert(cancelTrip)
+    })
+  }
+
   const ViewHandler = () => {
     if (ViewPassenger == 'ViewPassenger') {
       return <ViewPassengers />
@@ -153,7 +175,17 @@ const DriverTrips = () => {
                   <HiOutlineArrowNarrowDown size={45} />
                 </td>
                 <td></td>
-                <td></td>
+                <td>
+                  {' '}
+                  <MdCancel
+                    className="center start-icon"
+                    id={data1.trips_id}
+                    onClick={StartTrip}
+                    color="black"
+                    size={40}
+                  />
+                  <div className="complete-text">Start Trip</div>
+                </td>
               </tr>
 
               <tr>

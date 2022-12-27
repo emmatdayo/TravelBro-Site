@@ -178,7 +178,7 @@ const DriverTrips = () => {
                 <td>
                   {' '}
                   <MdForward
-                    className="center start-icon"
+                    className="center delete-icon"
                     id={data1.trips_id}
                     onClick={StartTrip}
                     color="black"

@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useCookies } from 'react-cookie'
 import Passenger from '../passenger/passenger'
 import { HiOutlineArrowNarrowDown } from 'react-icons/hi'
-import { MdOutlinePersonOutline, MdDelete, MdCancel } from 'react-icons/md'
+import { MdOutlinePersonOutline, MdForward, MdCancel } from 'react-icons/md'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 
 const DriverTrips = () => {
@@ -177,7 +177,7 @@ const DriverTrips = () => {
                 <td></td>
                 <td>
                   {' '}
-                  <MdCancel
+                  <MdForward
                     className="center start-icon"
                     id={data1.trips_id}
                     onClick={StartTrip}

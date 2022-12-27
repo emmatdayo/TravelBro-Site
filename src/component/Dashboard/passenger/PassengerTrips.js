@@ -4,18 +4,19 @@ import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { Cookies } from 'react-cookie'
 import { HiOutlineArrowNarrowDown } from 'react-icons/hi'
-import { MdOutlinePersonOutline, MdDelete } from 'react-icons/md'
+import { MdOutlinePersonOutline, MdDelete, MdDoneOutline } from 'react-icons/md'
 
 const cookies = new Cookies()
 
 const PassengerTrip = () => {
   const [post, setPost] = useState([])
   const [deleteTrip, setDeleteTrip] = useState(0)
+  const [tripComplete, setTripComplete] = useState(0)
 
   const baseURL = 'https://www.travelbro.top/api.php'
   useEffect(() => {
     ViewStuff()
-  }, [deleteTrip])
+  }, [deleteTrip, tripComplete])
   const ViewStuff = () => {
     const user = cookies.get('user')
 
@@ -35,6 +36,7 @@ const PassengerTrip = () => {
   const DeleteTrip = (e) => {
     const id = e.target.id
     const user = cookies.get('user')
+
     //alert(id)
 
     const datas = {
@@ -49,6 +51,30 @@ const PassengerTrip = () => {
       const delete_trip = response.data
       //alert(delete_trip)
       setDeleteTrip(delete_trip)
+    })
+  }
+
+  const TripCompleted = (e) => {
+    const user = cookies.get('user')
+    const TargetId = e.currentTarget.id
+    const IdArray = TargetId.split(' ')
+    const id = IdArray[0]
+    const trip_id = IdArray[1]
+    //alert(id)
+
+    const datas = {
+      request: 'trip_completed',
+      id: id,
+      user: user,
+      trip_id: trip_id,
+    }
+    const new_data = JSON.stringify(datas)
+    //const new_data2 = JSON.parse(new_data)
+
+    axios.post(baseURL, new_data).then((response) => {
+      const trip_completed = response.data
+      //alert(delete_trip)
+      setTripComplete(trip_completed)
     })
   }
   return (
@@ -81,7 +107,16 @@ const PassengerTrip = () => {
                   <HiOutlineArrowNarrowDown size={45} />
                 </td>
                 <td></td>
-                <td></td>
+                <td>
+                  <MdDoneOutline
+                    className="center delete-icon"
+                    id={data1.my_trip_id + ' ' + data1.trip_id}
+                    onClick={TripCompleted}
+                    color="black"
+                    size={40}
+                  />
+                  <div className="delete-text">Trip Complted</div>
+                </td>
               </tr>
 
               <tr>

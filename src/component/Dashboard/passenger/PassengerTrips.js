@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 import { Cookies } from 'react-cookie'
 import { HiOutlineArrowNarrowDown } from 'react-icons/hi'
-import { MdOutlinePersonOutline, MdDelete, MdDoneOutline } from 'react-icons/md'
+import { MdOutlinePersonOutline, MdDelete, MdDoneAll } from 'react-icons/md'
 
 const cookies = new Cookies()
 
@@ -108,7 +108,7 @@ const PassengerTrip = () => {
                 </td>
                 <td></td>
                 <td>
-                  <MdDoneOutline
+                  <MdDoneAll
                     className="center delete-icon"
                     id={data1.my_trip_id + ' ' + data1.trip_id}
                     onClick={TripCompleted}

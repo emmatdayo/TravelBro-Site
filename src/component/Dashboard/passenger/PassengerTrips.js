@@ -115,7 +115,7 @@ const PassengerTrip = () => {
                     color="black"
                     size={40}
                   />
-                  <div className="delete-text">Trip Complted</div>
+                  <div className="complete-text">Trip Complted</div>
                 </td>
               </tr>
 

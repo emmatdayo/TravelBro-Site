@@ -1,6 +1,15 @@
 .payment-div {
   width: 70%;
   margin-top: 10%;
+  .payment-row {
+    border-bottom: 1px solid silver;
+
+    .payment-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: silver;
+    }
+  }
   .payment-button {
     //border: 1px solid silver;
     //background-color: #4f52ff;

@@ -46,7 +46,7 @@ const TripPayment = () => {
         <div className="col-4 ">
           <hr />
         </div>
-        <div className="col-4">&#8358; {totalPrice}</div>
+        <div className="col-4 payment-text">&#8358; {totalPrice}</div>
       </div>
       <button className="btn btn-primary payment-button">
         Request Payment
